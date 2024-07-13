@@ -18,7 +18,7 @@ class HeroBannerController extends Controller
         $validator = Validator::make($request->all(), [
             'tittle'        => 'required',
             'description'   => 'required',
-            'image'         => 'required|max:250',
+            'image'         => 'required|max:1000',
             'small_tittle'  => 'required',
         ]);
 

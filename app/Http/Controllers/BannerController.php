@@ -20,7 +20,7 @@ class BannerController extends Controller
     public function bannerStore(Request $request){
         $validator = Validator::make($request->all(), [
             'tittle' => 'nullable',
-            'image' => 'required|max:200',
+            'image' => 'required|max:1000',
         ]);
 
         if ($validator->fails()) {
@@ -80,7 +80,7 @@ public function banneredit($id){
     public function bannerupdate(Request $request,$id){
         $validator = Validator::make($request->all(), [
             'tittle' => 'nullable',
-            'image' => 'required|max:200',
+            'image' => 'required|max:1000',
         ]);
 
     if ($validator->fails()) {

@@ -5,7 +5,7 @@
     <div class="col-lg-12">
         <div class="featured__controls">
             <ul>
-                <li class="active" data-filter="*"><strong>New Arrival</strong></li>
+                <li class="active" data-filter="*"><strong>DEALS YOU CANNOT MISS</strong></li>
             </ul>
         </div>
     </div>

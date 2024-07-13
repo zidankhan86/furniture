@@ -33,8 +33,8 @@
                                 </td>
                                 <td class="shoping__cart__quantity">
                                     <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="{{$data['quantity']}}">
+                                        <div class="form-control">
+                                            <input type="readonly" value="{{$data['quantity']}}" readonly>
                                         </div>
                                     </div>
                                 </td>

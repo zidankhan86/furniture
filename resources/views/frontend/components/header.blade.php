@@ -92,19 +92,29 @@
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="{{ route('wishlist.index') }}"><i class="fa fa-heart"></i> <span> @auth
-                                        <button>
-                                            {{ Auth::user()->wishlistProducts->count() }}
-                                        </button>
+                        <li>
+                            <a href="{{ route('wishlist.index') }}">
+                                <button class="btn btn-black">
+                                    WISHLIST
+                                    @auth
+                                        <span class="wishlist-count">{{ Auth::user()->wishlistProducts->count() }}</span>
                                     @else
-                                        <button>
-                                            0
-                                        </button>
+                                        <span class="wishlist-count">0</span>
                                     @endauth
-                                </span></a></li>
-                        <li><a href="{{ url('/view-cart') }}"><button class="btn btn-pink"><i
-                                        class="fa fa-shopping-bag"><span>{{ session()->has('cart') ? count(session()->get('cart')) : 0 }}</span></i>BAG</button>
-                            </a></li>
+                                </button>
+                            </a>
+                        </li>
+                        
+                                <li>
+                                    <a href="{{ url('/view-cart') }}">
+                                        <button class="btn btn-pink">
+                                            <i class="fa fa-shopping-bag"></i>
+                                            <span class="cart-count">{{ session()->has('cart') ? count(session()->get('cart')) : 0 }}</span>
+                                            BAG
+                                        </button>
+                                    </a>
+                                </li>
+                                
                     </ul>
                 </div>
             </div>
@@ -116,14 +126,107 @@
 </header>
 <!-- Header Section End -->
 <style>
-    .btn-pink {
-        background-color: #e83e8c;
+/* Custom styles for the pink button *//* Custom styles for the pink button */
+.btn-pink {
+    background-color: #e83e8c;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    font-size: 16px;
+    border-radius: 25px; /* Rounded shapes on left and right sides */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Added to position the count correctly */
+}
+
+.btn-pink:hover {
+    background-color: #c7176f;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styles for the cart icon and count */
+.fa-shopping-bag {
+    margin-right: 10px; /* Added space between icon and text */
+}
+
+.cart-count {
+    background-color: white;
+    color: #e83e8c; 
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute; 
+    top: -10px; 
+    right: -10px; 
+}
+
+/* Add some spacing around the button */
+li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+/* Adjust link hover effect */
+a:hover .btn-pink {
+    text-decoration: none;
+
+}
+
+</style>
+
+{{-- Wishlist Button --}}
+<style>
+    /* Custom styles for the pink button */
+    .btn-black {
+        background-color: #14030b;
         color: white;
         border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 16px;
+        font-size: 16px;
+        border-radius: 25px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        position: relative; /* Added to position the count correctly */
     }
-
-    .btn-pink:hover {
-        background-color: #d63384;
+    
+    .btn-black:hover {
+        background-color: #e7d6de;
         color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-</style>
+    
+    /* Custom styles for the cart icon and count */
+    .fa-shopping-bag {
+        margin-right: 10px; /* Added space between icon and text */
+    }
+    
+    .cart-count {
+        background-color: white;
+        color: #0a0206; 
+        border-radius: 50%;
+        padding: 2px 8px;
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute; 
+        top: -10px; 
+        right: -10px; 
+    }
+    
+    /* Add some spacing around the button */
+    li {
+        list-style: none;
+        margin: 10px 0;
+    }
+    
+    /* Adjust link hover effect */
+    a:hover .btn-black {
+        text-decoration: none;
+    }
+    
+    </style>
