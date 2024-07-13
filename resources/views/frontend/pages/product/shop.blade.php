@@ -64,14 +64,10 @@
                                     <div class="product__discount__item__text">
                                         <span>{{$sale->ProductCategory->type}}</span>
                                         <h5>{{$sale->name}}</h5>
-                                         @if ($sale->discount)
-                                    <div style="display: flex; justify-content: center; align-items: center;">
-                                        <h5 style="color: rgb(214, 57, 17); margin-right: 10px;"><del>{{ $sale->price }} Tk.</del></h5>
-                                        <h5 style="color: rgb(214, 57, 17;">{{ $sale->discounted_price }} Tk.</h5>
-                                    </div>
-                                    @else
+                                      
+                                   
                                     <h5 style="color: rgb(214, 57, 17)">{{ $sale->price }} Tk.</h5>
-                                    @endif
+                                   
                                     </div>
                                 </div>
                             </div>
@@ -139,13 +135,8 @@
                               
                                 <div class="featured__item__text">
         
-                                    @if($item->discount)
-                                    <div class="discount-badge">
-                                        <span>-{{ $item->discount }}% OFF</span>
-                                    </div>
-                                    @endif
         
-                                    <h6><a href="#">{{ $item->name }}</a></h6>
+                                    <h6><p>{{ $item->name }}</p></h6>
                                     <div class="star-rating">
                                         @php
                                             // Retrieve the product ratings for the current product
@@ -174,14 +165,9 @@
                                     </div>
         
         
-                                    @if ($item->discount)
-                                    <div style="display: flex; justify-content: center; align-items: center;">
-                                        <h5 style="color: rgb(214, 57, 17); margin-right: 10px;"><del>{{ $item->price }} Tk.</del></h5>
-                                        <h5 style="color: rgb(214, 57, 17;">{{ $item->discounted_price }} Tk.</h5>
-                                    </div>
-                                    @else
+                                 
                                     <h5 style="color: rgb(214, 57, 17)">{{ $item->price }} Tk.</h5>
-                                    @endif
+                                   
                                 </div>
 
                                 <br>

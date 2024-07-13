@@ -19,21 +19,23 @@
                     <div class="product__details__text">
                         <h3>{{$details->name}}</h3>
 
-                        @if ($details->discount)
-                        <div style="display: flex;">
-                            <h5 style="color: rgb(214, 57, 17); margin-right: 10px;"><del>{{ $details->price }} Tk.</del></h5>
-                            <h5 style="color: rgb(214, 57, 17;">{{ $details->discounted_price }} Tk.</h5>
-                        </div>
-                        @else
                         <h5 style="color: rgb(214, 57, 17)">{{ $details->price }} Tk.</h5>
-                        @endif
+                       
                         <p>{!!$details->description!!}</p>
                         
-
+                        @if ($details->stock != 0)
                         <a href="{{route('add.to.cart',$details->id)}}" class="primary-btn">ADD TO CART</a>
-                        {{-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> --}}
+                        @else
+                        <a href="#" class="btn btn-danger">OUT OF STOCK</a>
+                        @endif
+                        
                         <ul>
-                            <li><b>Availability</b> <span>In Stock</span></li>
+                            @if ($details->stock != 0)
+                            <li><b>Availability</b><span>In Stock</span></li> 
+                            @else
+                            <li><b>Availability</b><span>Out Of Stock</span></li> 
+                            @endif
+                                                
                             <li><b>Shipping</b> <span>{{$details->time}} Days inside Dhaka <samp>5 Days Outside</samp></span></li>
                             <li><b>Weight</b> <span>{{$details->weight}} Kg</span></li>
                             <li><b>Share on</b>
