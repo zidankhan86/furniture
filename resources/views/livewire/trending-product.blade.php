@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="latest-product__text">
-                    <h4 style="text-align: center"><b>Trending Products</b> </h4>
+                    <h4 style="text-align: center"><b>Trending BEAUTY PRODUCTS</b> </h4>
                     <div class="latest-product__slider owl-carousel">
 
                         <div class="latest-prdouct__slider__item" style="display: flex;">
