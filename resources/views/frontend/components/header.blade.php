@@ -75,7 +75,7 @@
                         <a href="{{ route('home') }}"><img src="{{ url('/public/uploads/', $logo->image) }}"
                                 alt=""></a>
                     @else
-                        <a href="{{ route('home') }}">Inseart a logo</a>
+                        <a href="{{ route('home') }}" style="color: red">Inseart a logo</a>
                     @endif
                 </div>
             </div>
