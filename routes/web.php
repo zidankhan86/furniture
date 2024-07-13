@@ -20,6 +20,7 @@ use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\HeroBannerController;
 use App\Http\Controllers\CompanyLogoController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\SocialShareButtonsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -48,7 +49,10 @@ Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])
 Route::get('/profile',[ProfileController::class,'profile']);
 Route::get('/admin-profile',[ProfileController::class,'adminProfile']);
 
-
+Route::post('/pay/{id}', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
  //Social share
 Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWidget']);

@@ -68,15 +68,9 @@ class ProductController extends Controller
     public function order(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'first_name'        => 'required|string',
-            'last_name'         => 'required|string',
             'address'           => 'required|string',
-            'optional_address'  => 'nullable|string',
-            'city'              => 'required|string',
-            'postcode'          => 'required|string',
             'phone'             => 'required|string',
             'email'             => 'required|email',
-            'note'              => 'nullable|string',
             'total_price'       => 'nullable|numeric|min:0',
             'name'              => 'nullable|string',
 
@@ -88,15 +82,10 @@ class ProductController extends Controller
 
 
         $order = Order::create([
-            "first_name"        =>$request->first_name,
-            "last_name"         =>$request->last_name,
+            "name"              =>$request->name,
             "address"           =>$request->address,
-            "optional_address"  =>$request->optional_address,
-            "city"              =>$request->city,
-            "postcode"          =>$request->postcode,
             "phone"             =>$request->phone,
             "email"             =>$request->email,
-            "note"              =>$request->note,
             "total_price"       => $request->total_price, 
             "name"              => implode(', ', $request->input('product_names', [])),
             "user_id"           =>$request->user_id,

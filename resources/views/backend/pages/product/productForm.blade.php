@@ -131,10 +131,6 @@
             <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                @if(session('success'))
-                <p class="alert alert-success">{{ session('success') }}</p>
-                @endif
-
                 <div class="mb-3">
                     <label for="exampleInputName2" class="form-label">Type Name</label>
                     <input type="text" value="{{ old('type') }}" class="form-control" id="exampleInputName2" name="type" placeholder="Category Type..">

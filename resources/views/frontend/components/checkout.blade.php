@@ -19,19 +19,19 @@
                 @endif
                   <h4>Billing Details</h4>
 
-                  <form action="{{route('product.order.store',$products->id)}}" method="POST" enctype="multipart/form-data">
+                  <form action="{{route('pay.now',$products->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                       <div class="row">
-                          <div class="col-lg-8 col-md-6">
+                          <div class="col-lg-6 col-md-12">
                               <div class="row">
 
 
-                                  <div class="col-lg-6">
+                                  <div class="col-lg-12">
                                       <div class="checkout__input">
-                                          <p>Fist Name<span>*</span></p>
-                                          <input type="text" name="first_name">
+                                          <p>Name<span>*</span></p>
+                                          <input type="text" name="name">
 
-                                        @error('first_name')
+                                        @error('name')
 
                                         <small class="text-danger">{{$message}}</small>
 
@@ -39,19 +39,7 @@
 
                                       </div>
                                   </div>
-                                  <div class="col-lg-6">
-                                      <div class="checkout__input">
-                                          <p>Last Name<span>*</span></p>
-                                          <input type="text" name="last_name">
-                                          @error('last_name')
-
-                                        <small class="text-danger">{{$message}}</small>
-
-                                        @enderror
-                                      </div>
-
-
-                                  </div>
+                                 
                               </div>
 
                               <div class="checkout__input">
@@ -65,38 +53,13 @@
 
                                     @enderror
 
-                                  <input type="text" placeholder="Apartment, suite, unite ect (optinal)" name="address">
-
-
+                                
 
                               </div>
-
-
 
 
                               <input type="hidden" name="total_price" value="{{ $subtotal }}">
-
-                              <div class="checkout__input">
-                                  <p>Town/City<span>*</span></p>
-                                  <input type="text" name="city">
-
-                                  @error('city')
-
-                                  <small class="text-danger">{{$message}}</small>
-
-                                  @enderror
-                              </div>
-
-                              <div class="checkout__input">
-                                  <p>Postcode / ZIP<span>*</span></p>
-                                  <input type="text" name="postcode">
-
-                                  @error('postcode')
-
-                                  <small class="text-danger">{{$message}}</small>
-
-                                  @enderror
-                              </div>
+                         
                               <div class="row">
                                   <div class="col-lg-6">
                                       <div class="checkout__input">
@@ -114,6 +77,8 @@
 
                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                 <input type="hidden" name="product_id" value="{{$products->id}}">
+                                <input type="hidden" name="transaction_id">
+                                <input type="hidden" name="currency">
                                   <div class="col-lg-6">
                                       <div class="checkout__input">
                                           <p>Email<span>*</span></p>
@@ -129,21 +94,13 @@
                               </div>
                               <div class="checkout__input__checkbox">
                                   <label for="acc">
-                                      Create an account? <a href="">Click here..</a>
+                                      Create an account? <a href="{{ route('registration') }}">Click here..</a>
                                       <input type="checkbox" id="acc">
                                       <span class="checkmark"></span>
                                   </label>
                               </div>
 
-
-                              <div class="checkout__input">
-                                  <p>Order notes<span>*</span></p>
-                                  <input type="text" name="note"
-                                      placeholder="Notes about your order, e.g. special notes for delivery.">
                               </div>
-                              </div>
-
-
 
 
                         <div class="col-lg-4 col-md-6">
@@ -160,11 +117,7 @@
                                 <div class="checkout__order__subtotal">Subtotal <span>{{ $subtotal ?? 0 }} Tk.</span></div>
                                 <div class="checkout__order__total">Total <span>{{ $subtotal ?? 0 }} Tk.</span></div>
                                 <div class="checkout__input__checkbox">
-                                    <label for="acc-or">
-                                        Create an account?
-                                        <input type="checkbox" id="acc-or">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                
                                 </div>
                                 <ul>
                                     @if(session()->has('cart') && is_array(session()->get('cart')))
