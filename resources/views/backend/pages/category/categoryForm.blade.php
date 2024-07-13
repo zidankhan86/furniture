@@ -4,7 +4,7 @@
 
 <br><br><div class="container">
     <div class="mx-auto mt-4 mb-4">
-        <h4 class="text-success text-center">Category Form</h4>
+        <h4 class="text-success text-center">Category</h4>
 
         <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data" class="mx-auto p-3" style="max-width: 600px;">
             @csrf
@@ -14,8 +14,8 @@
             @endif
 
             <div class="mb-3">
-                <label for="exampleInputName2" class="form-label">Type Name</label>
-                <input type="text" value="{{ old('type') }}" class="form-control" id="exampleInputName2" name="type" placeholder="Category Type..">
+                <label for="exampleInputName2" class="form-label">Category Name</label>
+                <input type="text" value="{{ old('type') }}" class="form-control" id="exampleInputName2" name="type" placeholder="SKIN CARE">
                 @error('type')
                     <strong class="text-danger">{{ $message }}</strong>
                 @enderror
@@ -33,7 +33,7 @@
             </div>
 
                 <br><div class="text-center">
-                <button type="submit" class="btn btn-success">Create Category</button>
+                <button type="submit" class="btn btn-success">+Add Category</button>
             </div>
         </form>
     </div>

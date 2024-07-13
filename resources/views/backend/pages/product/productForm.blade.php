@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="exampleInputImage" class="form-label">Image <strong>*(IMAGE SIZE MAX 200kb)*</strong></label>
+                    <label for="exampleInputImage" class="form-label">Image <strong>(MAX 1000kb)*</strong></label>
                     <input type="file" class="form-control dropify" name="image" placeholder="Product Image..">
                     @error('image')
                     <div class="text-danger">{{ $message }}</div>

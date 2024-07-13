@@ -15,7 +15,7 @@
         @endif
 
         <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName1" class="form-label">Banner Title(Optional)</label>
+            <label for="exampleInputName1" class="form-label">Title</label>
             <input type="text" class="form-control" value="{{ $logo->tittle }}" id="title" name="tittle"
                 placeholder="Dry Food..">
             @error('tittle')

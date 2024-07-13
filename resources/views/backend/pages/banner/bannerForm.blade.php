@@ -8,7 +8,7 @@
 <div class="container">
 <div class="container">
 
-<br><h4 class=" text-success text-center">Banner Form</h4>
+<br><h4 class=" text-success text-center">Banner</h4>
 
 <form action="{{route('banner.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -24,7 +24,7 @@
 
 
             <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName1" class="form-label">Banner Title(Optional)</label>
+            <label for="exampleInputName1" class="form-label">Title</label>
             <input type="text" class="form-control" value="{{ old('tittle') }}" id="exampleInputName1" name="tittle" placeholder="Dry Food..">
             @error('tittle')
             <strong class="text-danger">{{$message}}</strong>
@@ -34,7 +34,7 @@
 
 
             <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName2" class="form-label">Upload Image <strong>*(IMAGE SIZE MAX 200kb)*</strong></label>
+            <label for="exampleInputName2" class="form-label">Upload Image <strong>(MAX 1000kb)*</strong></label>
             <input type="file" class="form-control dropify" data-height="300" value="{{ old('image') }}" id="dropify"  name="image">
             @error('image')
             <strong class="text-danger">{{$message}}</strong>
