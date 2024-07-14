@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Product;
 use App\Models\Title;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Database\Seeders\HeroSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,6 +29,11 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProductSeeder::class,
             TitleSeeder::class,
+            HeroSeeder::class,
+            LargeBannerSeeder::class,
+            MedumBannerSeeder::class,
+            SmallBannerSeeder::class,
+            LogoSeeder::class
         ]);
     }
 }
