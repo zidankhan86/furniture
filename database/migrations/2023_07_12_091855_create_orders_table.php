@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('price');
             $table->decimal('total_price')->default(0.00)->nullable();
             $table->string('name');
+            $table->string('full_name');
             $table->string('status')->default('processing');
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->nullable()->constrained()->onDelete('cascade');

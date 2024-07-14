@@ -31,14 +31,18 @@ class SslCommerzPaymentController extends Controller
 
 
         $product = Product::find($id);
-        
+        $productNames = implode(', ', $request->input('product_names', []));
+        $subtotal = $request->input('total_price');
+
         $post_data = array();
         $post_data['total_amount'] = $product->price;
+        $post_data['total_price'] = $subtotal;
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] = $request->name;
+        $post_data['name'] = $productNames;
+        $post_data['full_name'] = $request->full_name;
         $post_data['cus_email'] = $request->email;
         $post_data['cus_add1'] = $request->address;
         $post_data['user_id'] = auth()->user()->id;
@@ -74,7 +78,7 @@ class SslCommerzPaymentController extends Controller
         $update_product = DB::table('orders')
             ->where('transaction_id', $post_data['tran_id'])
             ->updateOrInsert([
-                'name' => $post_data['cus_name'],
+                'full_name' => $post_data['full_name'],
                 'email' => $post_data['cus_email'],
                 'phone' => $post_data['cus_phone'],
                 'price' => $post_data['total_amount'],
@@ -84,6 +88,8 @@ class SslCommerzPaymentController extends Controller
                 'currency' => $post_data['currency'],
                 'user_id' => $post_data['user_id'],
                 'product_id' => $post_data['product_id'],
+                'name' => $post_data['name'],
+                'total_price' => $post_data['total_price'],
             ]);
 
         $sslc = new SslCommerzNotification();

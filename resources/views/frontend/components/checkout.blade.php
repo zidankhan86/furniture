@@ -28,8 +28,8 @@
 
                                   <div class="col-lg-12">
                                       <div class="checkout__input">
-                                          <p>Name<span>*</span></p>
-                                          <input type="text" name="name">
+                                          <p>Full Name<span>*</span></p>
+                                          <input type="text" name="full_name">
 
                                         @error('name')
 
