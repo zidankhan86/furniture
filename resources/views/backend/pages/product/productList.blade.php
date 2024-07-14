@@ -45,23 +45,7 @@
                                 <td>{{ $item->status == 1 ? 'Active' : ($item->status == 2 ? 'Trending' : 'Inactive') }}</td>
                                 <td>
                                     <a href="{{route('product.edit',$item->id)}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
-                                    <div class="">
-                                    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                    <i class="fas fa-action"></i> </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{ route('trending.status', ['id' => $item->id]) }}">
-                                        <i class="fas fa-arrow-up"></i> Trending
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                        <i class="fas fa-check-circle"></i> Active
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                        <i class="fas fa-times-circle"></i> Inactive
-                                        </a>
-                                    </div>
-                                    </div>
-
+                                    <a href="{{ route('trending.status', ['id' => $item->id]) }}" class="btn btn-success"><i class="fa-regular fa-hourglass-half"></i></a>
                                     <a href="{{route('product.delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete ?')"><i class="fas fa-trash"></i></a>
                                 
 
