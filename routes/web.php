@@ -100,8 +100,6 @@ Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCh
 
 //Order Create for both
 Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
-//Order Tracking
-Route::get('/order/tracking/{id}',[OrderController::class,'orderTracking'])->name('order.tracking');
 });
 
 //middleware auth and admin

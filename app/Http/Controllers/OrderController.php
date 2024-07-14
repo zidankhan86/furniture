@@ -21,12 +21,6 @@ class OrderController extends Controller
         return view('backend.pages.order.orderView',compact('invoice'));
     }
 
-    public function orderTracking($id){
-
-        Order::find($id);
-
-        return view('frontend.pages.orderTrack.orderTrack');
-    }
 
     public function report()
     {
