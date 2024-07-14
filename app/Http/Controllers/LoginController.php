@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class LoginController extends Controller
 {
     public function showLoginForm(){
-        return view('backend.pages.auth.loginForm');
+        return view('backend.pages.auth.login-backend');
     }
 
 
