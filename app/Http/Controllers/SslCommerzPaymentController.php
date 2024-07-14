@@ -100,16 +100,15 @@ class SslCommerzPaymentController extends Controller
             print_r($payment_options);
             $payment_options = array();
             notify()->success('Order successful!.');
-            return redirect()->route('home');
-        } else {
-            return back()->with('error', 'No Product available');
-        }
+            return redirect()->route('/');
+        } 
 
     }
 
     public function success(Request $request)
     {
-        echo "Transaction is Successful";
+        notify()->success('Order successful!.');
+        return redirect()->route('home');
 
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
