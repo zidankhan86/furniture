@@ -68,9 +68,6 @@ Route::controller(LoginController::class)->group(function(){
     Route::post('/registration', 'registrationStore')->name('registration.submit');
 });
 
-
-
-
 //Forget password
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
@@ -103,7 +100,7 @@ Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->n
 });
 
 //middleware auth and admin
-Route::group(['middleware' => 'auth','admin','prefix'=>'admin'], function () {
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
 //Notification
 Route::get('/admin/notifications', [NotificationController::class, 'notifications'])->name('admin.notifications');
 

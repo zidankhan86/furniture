@@ -17,38 +17,29 @@ class LoginController extends Controller
 
 
     public function loginProcess(Request $request)
-{
-   // dd($request->all());
+    {
+        //dd($request->all());
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        $credential = $request->only(['email', 'password']);
 
-  // Validate the input fields
-  $validator = Validator::make($request->all(), [
-    'email' => 'required|email',
-    'password' => 'required',
-]);
-
-if ($validator->fails()) {
-    notify()->error('error','Invalid credentials');
-    return redirect()->back();
-}
-
-$credentials = $request->only(['email', 'password']);
-$remember = $request->has('remember'); // Check if the "Remember Me" checkbox is checked
-
-if (Auth::attempt($credentials, $remember)) {
-    $user = Auth::user();
-
-    if ($user->role == 'admin') {
-        return redirect()->route('dashboard');
-    } elseif ($user->role == 'customer') {
-        notify()->success('Login successful!.');
-        return redirect()->route('home');
+        if (Auth::attempt($credential)) {
+            if (auth()->user()->role == 'customer') {
+                return redirect()->route('home');
+            } elseif (auth()->user()->role == 'admin') {
+                notify()->error('error','Login Success');
+                return redirect()->route('dashboard');
+            }
+        } else {
+            notify()->error('error','Invalid credentials');
+            return redirect()->back();
+        }
     }
-}
-notify()->error('error','Invalid credentials');
-// Authentication failed
-return redirect()->back();
 
-}
+// Authentication failed
+
 
 public function logout(){
 
@@ -104,7 +95,7 @@ public function registrationStore(Request $request){
 }
 
 public function showLoginFormFrontend(){
-    return view('backend.pages.auth.loginFrontend');
+    return view('backend.pages.auth.login');
 }
 
 }
