@@ -38,7 +38,7 @@
 
 
         <td>
-            <a href="{{route('contact.view' ,$item->id)}}" class="btn btn-warning"><i class="fas fa-envelope"></i> </a>
+            <a href="{{route('contact.view' ,$item->id)}}" class="btn btn-info"><i class="fas fa-envelope"> </i> OPEN</a>
 
 
         </td>
