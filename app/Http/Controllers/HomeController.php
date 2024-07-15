@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function dashboard(){
-
+        $totalUsers         = User::get()->count();
         $totalOrder         = Order::get()->count();
         $totalProducts      = Product::get()->count();
         $totalCategories    = Category::get()->count();
@@ -21,6 +22,6 @@ class HomeController extends Controller
                                     ->orderBy('date', 'asc')
                                     ->get();
 
-        return view('backend.pages.dashboard',compact('totalOrder','totalProducts','totalCategories', 'ordersPerDay'));
+        return view('backend.pages.dashboard',compact('totalOrder','totalProducts','totalCategories', 'ordersPerDay','totalUsers'));
     }
 }
