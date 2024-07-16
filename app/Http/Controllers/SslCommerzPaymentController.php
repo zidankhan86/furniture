@@ -100,7 +100,7 @@ class SslCommerzPaymentController extends Controller
             print_r($payment_options);
             $payment_options = array();
             notify()->success('Order successful!.');
-            return redirect()->route('/');
+            return redirect()->route('home');
         } 
 
     }

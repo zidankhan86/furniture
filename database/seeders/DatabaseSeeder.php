@@ -26,14 +26,14 @@ class DatabaseSeeder extends Seeder
         // AdminSeeder::class;
         $this->call([
             AdminSeeder::class,
-            CategorySeeder::class,
-            ProductSeeder::class,
-            TitleSeeder::class,
-            HeroSeeder::class,
-            LargeBannerSeeder::class,
-            MedumBannerSeeder::class,
-            SmallBannerSeeder::class,
-            LogoSeeder::class
+            // CategorySeeder::class,
+            // ProductSeeder::class,
+            // TitleSeeder::class,
+            // HeroSeeder::class,
+            // LargeBannerSeeder::class,
+            // MedumBannerSeeder::class,
+            // SmallBannerSeeder::class,
+            // LogoSeeder::class
         ]);
     }
 }

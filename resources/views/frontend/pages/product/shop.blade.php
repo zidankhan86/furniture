@@ -54,7 +54,7 @@
                             <div class="col-lg-4">
                                 <div class="product__discount__item">
                                     <div class="product__discount__item__pic set-bg"
-                                        data-setbg="{{ asset('/public/uploads/' . $item->image) }}">
+                                        data-setbg="{{ asset('/public/uploads/' . $sale->image) }}">
                                         <div class="product__discount__percent">-{{$sale->discount}}%</div>
                                         <ul class="product__item__pic__hover">
                                             <li><a href="{{url('/product-details',$sale->id)}}"><i class="fa fa-eye"></i></a></li>
