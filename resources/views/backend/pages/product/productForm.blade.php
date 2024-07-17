@@ -18,7 +18,7 @@
                 <div class="row mt-4">
                     <div class="mb-3 col-md-6">
                         <label for="exampleInputName1" class="form-label">Name</label>
-                        <input type="text" class="form-control" value="{{ old('name') }}" id="exampleInputName1" name="name" placeholder="Vaseline..">
+                        <input type="text" class="form-control" value="{{ old('name') }}" id="exampleInputName1" name="name" placeholder="Sunsilk Shampoo..">
                         @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="exampleInputWeight" class="form-label">Weight</label>
-                        <input type="number" class="form-control" step="0.01" value="{{ old('weight') }}" id="exampleInputWeight" name="weight" placeholder="0.5kg..">
+                        <input type="number" class="form-control" step="0.01" value="{{ old('weight') }}" id="exampleInputWeight" name="weight" placeholder="0.2kg..">
                         @error('weight')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -57,7 +57,7 @@
 
                     <div class="mb-3 col-md-4">
                         <label class="form-label">Stock</label>
-                        <input type="number" class="form-control" value="{{ old('stock') }}" id="exampleInputInhouseStock" name="stock" placeholder="70..">
+                        <input type="number" class="form-control" value="{{ old('stock') }}" id="exampleInputInhouseStock" name="stock" placeholder="10..">
                         @error('stock')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -65,7 +65,7 @@
 
                     <div class="mb-3 col-md-4">
                         <label for="exampleInputPrice" class="form-label">Price</label>
-                        <input type="number" class="form-control" id="exampleInputPrice" value="{{ old('price') }}" name="price" placeholder="500..">
+                        <input type="number" class="form-control" id="exampleInputPrice" value="{{ old('price') }}" name="price" placeholder="10..">
                         @error('price')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="mb-3 col-md-4">
+                    <div class="mb-3 col-md-6">
                         <label for="exampleInputDiscount" class="form-label">Discount</label>
                         <input type="number" class="form-control" id="exampleInputDiscount" value="{{ old('discount') }}" name="discount" placeholder="25%..">
                         @error('discount')
@@ -81,15 +81,8 @@
                         @enderror
                     </div>
 
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleInputShippingTime" class="form-label">Shipping time</label>
-                        <input type="number" class="form-control" id="exampleInputShippingTime" name="time" value="{{ old('time') }}" placeholder="3 days in Dhaka..">
-                        @error('time')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
 
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label for="exampleInputStatus" class="form-label">Status</label>
                         <select name="status" id="exampleInputStatus" class="form-control">
                             <option value="1">Active</option>

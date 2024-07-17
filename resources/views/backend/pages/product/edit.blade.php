@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="row">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-6 mb-3">
             <label for="exampleInputNumber" class="form-label">Price</label>
             <input type="number" class="form-control" id="exampleInputNumber"  value="{{$edit->price}}" name="price" placeholder="500..">
             @error('price')
@@ -77,7 +77,7 @@
             @enderror
             </div>
 
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6 mb-3">
                 <label for="exampleInputNumber" class="form-label">Dicount Price</label>
                 <input type="number" class="form-control" id="exampleInputNumber"  value="{{$edit->discount}}" name="discount" placeholder="25%..">
                 @error('discount')
@@ -85,15 +85,7 @@
                 @enderror
         </div>
 
-             <div class="col-md-4 mb-3">
-            <label for="exampleInputNumber3" class="form-label">Shipping time</label>
-            <input type="number" class="form-control" id="exampleInputNumber3" name="time"  value="{{$edit->time}}" placeholder="3 days in Dhaka..">
-            @error('time')
-
-                <strong class="text-danger">{{$message}}</strong>
-
-                @enderror
-             </div>
+            
         </div>
               <div class="col-md-12 mb-3">
                 <label for="exampleInputName1" class="form-label">Product Description</label>
