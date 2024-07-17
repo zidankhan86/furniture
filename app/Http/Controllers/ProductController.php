@@ -17,17 +17,16 @@ class ProductController extends Controller
     }
 
     public function productStore(Request $request){
-        // dd($request->all());
+         //dd($request->all());
 
         $validator = Validator::make($request->all(), [
             'name'                  => 'required|string',
             'category_id'           => 'required',
             'image'                 => 'nullable|max:500',
-            'weight'                => 'required|numeric',
-            'stock'                 => 'required|integer',
-            'price'                 => 'required|numeric',
-            'discount'              => 'nullable|numeric|max:100',
-            'time'                  => 'required',
+            'weight'                => 'required|numeric|min:0',
+            'stock'                 => 'required|integer|min:0',
+            'price'                 => 'required|numeric|min:0',
+            'discount'              => 'nullable|numeric|min:0|max:100',
             'description'           => 'required',
             'product_information'   => 'required',
             'status'                => 'required',

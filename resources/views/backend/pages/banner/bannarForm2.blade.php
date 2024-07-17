@@ -22,7 +22,7 @@
 
             <div class="mb-3 mx-sm-2">
             <label for="exampleInputName1" class="form-label">Title</label>
-            <input type="text" class="form-control" value="{{ old('tittle') }}" id="title" name="tittle" placeholder="Dry Food..">
+            <input type="text" class="form-control" value="{{ old('tittle') }}" id="title" name="tittle" placeholder="Face wash">
             @error('tittle')
             <strong class="text-danger">{{$message}}</strong>
             @enderror

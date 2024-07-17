@@ -5,7 +5,7 @@
 <div class="container">
 <div class="container">
 
-<br><h4 class=" text-success text-center">Hero Banner Form</h4>
+<br><h4 class=" text-success text-center">Hero Banner</h4>
 
 <form action="{{route('hero.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -22,7 +22,7 @@
 
             <div class="mb-3 mx-sm-2">
                 <label for="exampleInputName1" class="form-label">Small Tittle</label>
-                <input type="text" class="form-control" value="{{ old('small_tittle') }}" id="exampleInputName1" name="small_tittle" placeholder="FRUIT FRESH..">
+                <input type="text" class="form-control" value="{{ old('small_tittle') }}" id="exampleInputName1" name="small_tittle" placeholder="BEAUTY SOLUTION">
                 @error('tittle')
 
                 <strong class="text-danger">{{$message}}</strong>
@@ -33,7 +33,7 @@
 
         <div class="mb-3 mx-sm-2">
         <label for="exampleInputName1" class="form-label">Banner Tittle</label>
-        <input type="text" class="form-control" value="{{ old('tittle') }}" id="exampleInputName1" name="tittle" placeholder="Vegetable 100% Fresh..">
+        <input type="text" class="form-control" value="{{ old('tittle') }}" id="exampleInputName1" name="tittle" placeholder="YOU GLOW GIRL.">
         @error('tittle')
 
         <strong class="text-danger">{{$message}}</strong>
@@ -52,7 +52,7 @@
         </div>
 
             <div class="mb-3 mx-sm-2">
-            <label for="exampleInputName2" class="form-label">Chose Banner <strong>*(MAX IMAGE SIZE 200kb)*</strong></label>
+            <label for="exampleInputName2" class="form-label">Chose Banner <strong>*(MAX IMAGE SIZE 1000kb)*</strong></label>
             <input type="file" class="form-control dropify" value="{{ old('image') }}" name="image">
             @error('image')
 
@@ -73,7 +73,7 @@
     <script>
         $('.dropify').dropify({
         messages: {
-            'default': 'Drag and drop a file here or click',
+            'default': 'Banner Image',
             'replace': 'Drag and drop or click to replace',
             'remove':  'Remove',
             'error':   'Ooops, something wrong happended.'

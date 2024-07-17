@@ -19,7 +19,7 @@
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Logo Title (Optional)</label>
-                        <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" placeholder="Dry Food..">
+                        <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" placeholder=" Face wash..">
                         @error('title')
                             <strong class="text-danger">{{ $message }}</strong>
                         @enderror
