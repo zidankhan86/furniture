@@ -36,7 +36,7 @@
                             <li><b>Availability</b><span>Out Of Stock</span></li> 
                             @endif
                                                 
-                            <li><b>Shipping</b> <span>{{$details->time}} Days inside Dhaka <samp>5 Days Outside</samp></span></li>
+                            <li><b>Shipping</b> <span>3 Days inside Dhaka <samp>5 Days Outside</samp></span></li>
                             <li><b>Weight</b> <span>{{$details->weight}} Kg</span></li>
                             <li><b>Share on</b>
                                 <div class="share">
