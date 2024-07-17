@@ -31,7 +31,7 @@
                         </ul><br><br>
                     </div><br><br>
                             <!-- Booking History -->
-                            <h3>Booking History</h3><br>                 
+                            <h3>Order History</h3><br>                 
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                           <thead>
                               <tr>
                                   <th scope="col">#</th>
-                                  <th scope="col">Booking Name</th>
+                                  <th scope="col">Order Name</th>
                                   <th scope="col">Order ID</th>
                                   <th scope="col">Pay</th>
                                   <th scope="col">Placed On</th>

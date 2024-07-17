@@ -30,13 +30,13 @@
 
                             <form method="POST" action="{{ route('add.to.wishlist', ['id' => $item->id]) }}">
                                 @csrf
-                                <button type="submit" class="wishlist-button{{ $inWishlist ? ' in-wishlist' : '' }}">
-                                    <i class="fa fa-heart"></i>
+                                <button type="submit" class="btn btn-black{{ $inWishlist ? ' in-wishlist' : '' }}">
+                                    <small>WISHLIST</small>
                                 </button>
                             </form>
                             </li>
                           @endauth
-                            <li><a href="{{url('/product-details',$item->id)}}"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="{{url('/product-details',$item->id)}}" style="color: rgb(243, 15, 15)">VIEW</a></li>
                             <li><a href="{{route('add.to.cart',$item->id)}}"><i class="fa fa-shopping-cart"></i></a></li>
 
                         </ul>
@@ -91,5 +91,59 @@
         </div>
 
     </div>
+
+
+    {{-- Wishlist Button --}}
+<style>
+    /* Custom styles for the pink button */
+    .btn-black {
+        background-color: #14030b;
+        color: white;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 16px;
+        font-size: 16px;
+        border-radius: 25px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        position: relative; /* Added to position the count correctly */
+    }
+    
+    .btn-black:hover {
+        background-color: #cc4383;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Custom styles for the cart icon and count */
+    .fa-shopping-bag {
+        margin-right: 10px; /* Added space between icon and text */
+    }
+    
+    .cart-count {
+        background-color: rgb(189, 41, 66);
+        color: #be0f67; 
+        border-radius: 50%;
+        padding: 2px 8px;
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute; 
+        top: -10px; 
+        right: -10px; 
+    }
+    
+    /* Add some spacing around the button */
+    li {
+        list-style: none;
+        margin: 10px 0;
+    }
+    
+    /* Adjust link hover effect */
+    a:hover .btn-black {
+        text-decoration: none;
+    }
+    
+    </style>
 </section>
 <!-- Featured Section End -->

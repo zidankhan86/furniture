@@ -26,19 +26,12 @@
                     </div>
 
 
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                    <a class="nav-link collapsed" href="{{ route('product.list') }}"
                         data-bs-target="#collapsePages" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-cart-plus"></i></div>
                         Product
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
-                        data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link" href="{{ route('product.list') }}">Product</a>
-                        </nav>
-
-                    </div>
+                   
 
                     <a class="nav-link" href="{{ route('order.list') }}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-cart-plus"></i></div>
