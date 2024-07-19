@@ -48,17 +48,11 @@
                 
                             <h6><p>{{ $item->name }}</p></h6>
                             <div class="star-rating">
+                                
                                 @php
-                                    // Retrieve the product ratings for the current product
                                     $productRatings = App\Models\ProductRating::where('product_id', $item->id)->get();
-
-                                    // Calculate the average rating and limit it to a maximum of 5
                                     $averageRating = min($productRatings->avg('rating'), 5);
-
-                                    // Calculate the number of full stars
                                     $fullStars = floor($averageRating);
-
-                                    // Calculate the presence of a half star
                                     $hasHalfStar = ($averageRating - $fullStars) >= 0.5;
                                 @endphp
 
