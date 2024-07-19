@@ -36,7 +36,7 @@
                             </form>
                             </li>
                           @endauth
-                            <li><a href="{{url('/product-details',$item->id)}}" style="color: rgb(243, 15, 15)">VIEW</a></li>
+                            <li><a href="{{url('/product-details',$item->id)}}"><i class="fa fa-eye"></i></a></li>
                             <li><a href="{{route('add.to.cart',$item->id)}}"><i class="fa fa-shopping-cart"></i></a></li>
 
                         </ul>
@@ -48,7 +48,7 @@
                 
                             <h6><p>{{ $item->name }}</p></h6>
                             <div class="star-rating">
-                                
+
                                 @php
                                     $productRatings = App\Models\ProductRating::where('product_id', $item->id)->get();
                                     $averageRating = min($productRatings->avg('rating'), 5);
