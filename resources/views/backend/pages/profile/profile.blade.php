@@ -9,7 +9,7 @@
 </head>
 <body>
     <div style="max-width: 400px; margin: 0 auto; padding: 20px; text-align: center; font-family: Arial, sans-serif;">
-        <img src="https://via.placeholder.com/150" alt="User's Profile Picture" style="border-radius: 50%; width: 150px; height: 150px; border: 5px solid #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+        <img src="https://via.placeholder.com/150" alt="{{ auth()->user()->name }}'s Profile Picture" style="border-radius: 50%; width: 150px; height: 150px; border: 5px solid #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
         <h2 style="margin: 10px 0;">{{ auth()->user()->name }}</h2>
         <p style="color: #777;">Joined: {{ auth()->user()->created_at->diffForHumans() }}</p>
 

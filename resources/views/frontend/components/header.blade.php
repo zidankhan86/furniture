@@ -196,7 +196,7 @@ a:hover .btn-pink {
     }
     
     .btn-black:hover {
-        background-color: #e7d6de;
+        background-color: #d42e7c;
         color: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
