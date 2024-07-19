@@ -64,12 +64,12 @@
 
                                 @for ($i = 1; $i <= 5; $i++)
                                     @if ($i <= $fullStars)
-                                        <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
+                                        <span class="star" style="font-size: 18px; color: gold;">&#9733;</span>
                                     @elseif ($hasHalfStar)
-                                        <span class="star half" style="font-size: 24px; color: gold;">&#9733;</span>
+                                        <span class="star half" style="font-size: 18px; color: gold;">&#9733;</span>
                                         @php $hasHalfStar = false; @endphp
                                     @else
-                                        <span class="star" style="font-size: 24px; color: gray;">&#9733;</span>
+                                        <span class="star" style="font-size: 18px; color: gray;">&#9733;</span>
                                     @endif
                                 @endfor
                             </div>
