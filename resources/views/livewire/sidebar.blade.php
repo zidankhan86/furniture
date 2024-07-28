@@ -62,16 +62,8 @@
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="{{ route('hero.list') }}">Website Banner</a>
                         </nav>
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{ route('banner.list.one') }}">Set Banner 1</a>
-                        </nav>
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{ route('banner.list.two') }}">Set Banner 2</a>
-                        </nav>
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{ route('banner.list') }}">Set Banner 3</a>
+                     
 
-                        </nav>
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="{{ route('website.form') }}">Website name</a>
 

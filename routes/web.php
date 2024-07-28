@@ -132,23 +132,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/trending/status/{id}','trendingStatus')->name('trending.status');
 });
 
-//Banner
-Route::controller(BannerController::class)->group(function(){
-    Route::get('/banner-form-one','bannerFormOne')->name('banner.form.one');
-    Route::get('/banner-list-one','bannerListOne')->name('banner.list.one');
-    Route::post('/banner-store-one','bannerStoreOne')->name('banner.store.one');
-    Route::get('/bander-one-delete/{id}','bannerOneDelete')->name('banner.one.delete');
-    Route::get('/banner-form-two','bannerFormTwo')->name('banner.form.two');
-    Route::get('/banner-list-two','bannerListTwo')->name('banner.list.two');
-    Route::post('/banner-store-two','bannerStoreTwo')->name('banner.store.two');
-    Route::get('/bander-two-delete/{id}','bannerTwoDelete')->name('banner.two.delete');
-    Route::get('/banner-form','bannerForm')->name('banner.form');
-    Route::post('/banner-store','bannerStore')->name('banner.store');
-    Route::get('/banner-list','bannerlist')->name('banner.list');
-    Route::post('/banner-update/{id}','bannerupdate')->name('banner.update');
-    Route::get('/banner-delete/{id}','bannerdelete')->name('banner.delete');
-    Route::get('/banner-edit/{id}','banneredit')->name('banner.edit');
-});
+
 //Logo
 Route::controller(CompanyLogoController::class)->group(function(){
     Route::get('/logo-form','LogoForm')->name('logo.form');
