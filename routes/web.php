@@ -144,7 +144,6 @@ Route::controller(CompanyLogoController::class)->group(function(){
 //Order
 Route::controller(OrderController::class)->group(function(){
     Route::get('/order-list','orderList')->name('order.list');
-    Route::get('/order-invoice/{id}','orderinvoice')->name('order.invoice');
     
 });
 

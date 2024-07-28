@@ -13,12 +13,12 @@
         <tr>
             <th scope="col">Serial</th>
             <th scope="col">Name</th>
-            <th scope="col">Total</th>
+            <th scope="col">Price</th>
             <th scope="col">Full Name</th>
             <th scope="col">Address</th>
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
-            <th scope="col">Invoice</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -30,15 +30,13 @@
         <tr>
             <th scope="row">{{ $id++ }}</th>
             <td>{{ $item->name }}</td>
-            <td>{{ $item->total_price }} Tk.</td>
+            <td>{{ $item->price }} Tk.</td>
             <td>{{ $item->full_name }}</td>
             <td>{{ $item->address }}</td>
             <td>{{ $item->phone }}</td>
             <td>{{ $item->email }}</td>
            
-            <td>
-                <a href="{{route('order.invoice' ,$item->id)}}" class="btn btn-info"><i class="fas fa-file-invoice"></i></a>
-            </td>
+            
         </tr>
         @endforeach
     </tbody>
