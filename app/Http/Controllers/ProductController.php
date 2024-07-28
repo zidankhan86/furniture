@@ -23,11 +23,9 @@ class ProductController extends Controller
             'name'                  => 'required|string',
             'category_id'           => 'required',
             'image'                 => 'nullable|max:500',
-            'weight'                => 'required|numeric|min:0',
             'stock'                 => 'required|integer|min:0',
             'price'                 => 'required|numeric|min:0',
             'discount'              => 'nullable|numeric|min:0|max:100',
-            'description'           => 'required',
             'product_information'   => 'required',
             'status'                => 'required',
         ]);
@@ -50,12 +48,9 @@ class ProductController extends Controller
              "name"                 =>$request->name,
              "category_id"          =>$request->category_id,
              "image"                =>$images,
-             "weight"               =>$request->weight,
              "stock"                =>$request->stock,
              "price"                =>$request->price,
              "discount"             =>$request->discount,
-             "time"                 =>$request->time,
-             "description"          =>$request->description,
              'product_information'  =>$request->product_information,
              'status'               =>$request->status,
           ]);
@@ -100,12 +95,9 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name'                  => 'required',
             'category_id'           => 'required',
-            'image'                 => 'nullable|max:200',
-            'weight'                => 'required',
+            'image'                 => 'nullable|max:200',   
             'stock'                 => 'required|integer',
             'price'                 => 'required',
-            'time'                  => 'required',
-            'description'           => 'required',
             'product_information'   => 'required',
             'status'                => 'required',
         ]);
@@ -128,12 +120,8 @@ class ProductController extends Controller
              "name"              =>$request->name,
              "category_id"          =>$request->category_id,
              "image"                =>$images,
-             "weight"               =>$request->weight,
              "stock"                =>$request->stock,
              "price"                =>$request->price,
-             "discount"             =>$request->discount,
-             "time"                 =>$request->time,
-             "description"          =>$request->description,
              'product_information'  =>$request->product_information,
              'status'               =>$request->status,
             ]);
@@ -148,7 +136,7 @@ class ProductController extends Controller
 
             $delete->delete();
 
-            Alert::toast('Deleted! Product Deleted');
+            Alert::success('Product Deleted Successfully!!');
 
             return redirect()->back();
         }
@@ -186,7 +174,7 @@ class ProductController extends Controller
                     "status"=>"2"
                 ]);
 
-                Alert::toast()->success('Your status has been changed');
+                Alert::success('Your status has been changed');
 
                 return redirect()->route('product.list');
 

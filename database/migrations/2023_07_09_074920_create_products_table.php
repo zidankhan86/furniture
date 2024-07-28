@@ -16,13 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->constrained('categories')->restrictOnDelete();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->float('weight');
             $table->string('stock');
             $table->string('price');
             $table->string('discount')->nullable();
             $table->string('discounted_price')->nullable();
-            $table->string('time')->nullable();
-            $table->longText('description');
             $table->longText('product_information');
             $table->boolean('status')->default(0);
             $table->foreign('category_id')->references('id')->on('categories') ->restrictOnDelete();

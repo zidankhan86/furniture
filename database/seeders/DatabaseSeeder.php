@@ -29,10 +29,6 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProductSeeder::class,
             TitleSeeder::class,
-            HeroSeeder::class,
-            LargeBannerSeeder::class,
-            MedumBannerSeeder::class,
-            SmallBannerSeeder::class,
             LogoSeeder::class
         ]);
     }

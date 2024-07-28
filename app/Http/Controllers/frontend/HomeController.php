@@ -19,19 +19,12 @@ class HomeController extends Controller
     public function home(){
 
 
-          //Banner
-          $banners = Banner::all();
-          $bannersOne = BannerOne   ::all();
-          $bannersTwo = BannerTwo::all();
-
+     
           //Category
           $categories = Category::latest()->limit(9)->get();
          
           //Products
           $products = Product::simplePaginate(20);
-
-          //Hero Banner
-          $heroBanners = HeroBanner::all();
 
           //Latest Category
           $latestCategories = Category::latest()->limit(5)->get();
@@ -39,14 +32,12 @@ class HomeController extends Controller
           //Latest Products
           $latestProducts = Product::where('status',1)->latest()->limit(6)->get();
 
-          //Product Stars
-          $productRatings =ProductRating::all();
+        
          //Trending
          $trendingProduct = Product::where('status',2)->latest()->limit(8)->get();
          return view('frontend.pages.home',
          compact('categories','products','latestProducts',
-        'latestCategories','banners','heroBanners',
-        'bannersTwo','bannersOne','productRatings','trendingProduct'));
+        'latestCategories','trendingProduct'));
     }
 
        public function categoryWiseProduct($id){

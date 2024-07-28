@@ -23,7 +23,7 @@
 
             <div class="col-md-6 mb-3">
                 <label for="exampleInputName1" class="form-label">Select Category</label>
-                <select name="category_id" id="" class="form-control js-example-basic-single">
+                <select name="category_id" class="form-control">
                     @foreach ($categories as $item)
                     <option value="{{$item->id}}">{{$item->type}}</option>
                     @endforeach
@@ -40,7 +40,7 @@
                 @enderror
           </div>
           <div class="row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6 mb-3">
                 <label for="exampleInputNumber" class="form-label">Stock</label>
                 <input type="number" class="form-control" id="exampleInputNumber"  value="{{$edit->stock}}" name="stock" placeholder="500..">
                 @error('stock')
@@ -48,14 +48,8 @@
                 @enderror
                 </div>
 
-                <div class="col-md-4 mb-3">
-                    <label for="exampleInputNumber" class="form-label">Weight</label>
-                    <input type="number" class="form-control" step="0.01"  value="{{$edit->weight}}" id="exampleInputName1" name="weight" placeholder="0.5kg..">
-                    @error('weight')
-                    <strong class="text-danger">{{$message}}</strong>
-                    @enderror
-            </div>
-            <div class="col-md-4 mb-3" >
+             
+            <div class="col-md-6 mb-3" >
                 <label for="exampleInputNumber3" class="form-label">Status</label>
 
                 <select name="status" id="" class="form-control">
@@ -69,37 +63,19 @@
             </div>
         </div>
         <div class="row">
-        <div class="col-md-6 mb-3">
+        <div class="col-md-12 mb-3">
             <label for="exampleInputNumber" class="form-label">Price</label>
             <input type="number" class="form-control" id="exampleInputNumber"  value="{{$edit->price}}" name="price" placeholder="500..">
             @error('price')
             <strong class="text-danger">{{$message}}</strong>
             @enderror
             </div>
-
-            <div class="col-md-6 mb-3">
-                <label for="exampleInputNumber" class="form-label">Dicount Price</label>
-                <input type="number" class="form-control" id="exampleInputNumber"  value="{{$edit->discount}}" name="discount" placeholder="25%..">
-                @error('discount')
-                <strong class="text-danger">{{$message}}</strong>
-                @enderror
-        </div>
-
             
         </div>
+            
+
               <div class="col-md-12 mb-3">
                 <label for="exampleInputName1" class="form-label">Product Description</label>
-                <textarea type="text" class="form-control" id="editor"  name="description" value="{{$edit->description}}" placeholder="Write product description here.." style="height: 100px;">{{$edit->description}}</textarea>
-                @error('description')
-
-                <strong class="text-danger">{{$message}}</strong>
-
-                @enderror
-
-              </div>
-
-              <div class="col-md-12 mb-3">
-                <label for="exampleInputName1" class="form-label">Product Information</label>
                 <textarea class="form-control" id="editor2" name="product_information"  placeholder="Write more details about your product  here.." style="height: 150px;"> {{$edit->product_information}}</textarea>
                 @error('product_information')
                 <strong class="text-danger">{{$message}}</strong>
@@ -116,7 +92,7 @@
         <script>
           $('.dropify').dropify({
           messages: {
-              'default': 'Drag and drop a file here or click',
+              'default': 'Drag and drop Image',
               'replace': 'Drag and drop or click to replace',
               'remove':  'Remove',
               'error':   'Ooops, something wrong happended.'

@@ -50,13 +50,10 @@ class ProductSeeder extends Seeder
                     'category_id' => $category->id,
                     'name' => 'Product ' . $i,
                     'image' => $images[($i - 1) % count($images)],
-                    'weight' => 1.5 + $i,
                     'stock' => 10 + $i,
                     'price' => 20.99 + $i,
                     'discount' => $i % 2 == 0 ? null : $i * 2,
                     'discounted_price' => $i % 2 == 0 ? null : 20.99 + $i - ($i * 2),
-                    'time' => now()->addDays($i),
-                    'description' => 'This is product ' . $i . ' description.',
                     'product_information' => 'Product ' . $i . ' information.',
                     'status' => rand(0, 2),
                 ]);

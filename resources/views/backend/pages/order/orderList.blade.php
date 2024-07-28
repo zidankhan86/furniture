@@ -32,6 +32,7 @@
             <td>{{ $item->name }}</td>
             <td>{{ $item->price }} Tk.</td>
             <td>{{ $item->full_name }}</td>
+            <td>{{ $item->name }}</td>
             <td>{{ $item->address }}</td>
             <td>{{ $item->phone }}</td>
             <td>{{ $item->email }}</td>
