@@ -32,8 +32,7 @@
                                 <td>{{ $item->tittle }}</td>
 
                                 <td>
-                                    <a href="{{ route('logo.edit', $item->id) }}" class="btn btn-success"> <i
-                                            class="fas fa-edit"></i></a>
+                                    
                                     <a href="{{ route('logo.delete', $item->id) }}" class="btn btn-danger"
                                         onclick="return confirm('Do you want to delete ?')"> <i
                                             class="fas fa-trash"></i></a>
