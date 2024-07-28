@@ -139,7 +139,7 @@
                           scope="col"
                           class="dashboard__order-history-table-title"
                         >
-                          Total
+                          Price
                         </th>
                         <th
                           scope="col"
@@ -163,11 +163,9 @@
                         @foreach ($order as $index => $item)
                         <tr>
                             <th scope="row">{{ $index + 1 }}</th>
-                            <td>{{ $item->first_name }}</td>
-                            <td>#{{ $item->total_price }}{{ $item->id }}67890</td>
-                            <td>BDT {{ $item->total_price }}</td>
                             <td>{{ $item->created_at }}</td>
-                           
+                            <td>{{ $item->price }} Tk</td>
+
                             <td>{{ $item->status }}</td>
                             
                             
