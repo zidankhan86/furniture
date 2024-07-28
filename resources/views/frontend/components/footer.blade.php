@@ -1,67 +1,137 @@
- <!-- Footer Section Begin -->
- <footer class="footer spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer__about">
-                    @php
-                    $logo = App\Models\CompanyLogo::latest()->first();
-                    @endphp
-                    <div class="footer__about__logo">
-                        @if($logo)
-                        <a href="{{ route('home') }}"><img src="{{url('/public/uploads/', $logo->image)}}" alt=""></a>
-                        @else
-                            <a href="{{ route('home') }}">Inseart a logo</a>
-                         @endif
-                    </div>
 
-                   
-                    <ul>
-                        <li>Address:Uttara , Sector 10, Dhaka </li>
-                        <li>Phone: 01711111111</li>
-                        <li>Email: eCommerce@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                <div class="footer__widget">
-                    <h6>Useful Links</h6>
-                    <ul>
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ url('/product') }}">Products</a></li>
-                        <li><a href="{{ url('/contact') }}">ContactUs</a></li>
-                        
-                    </ul>
-                  
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="footer__widget">
-                    <h6>Join Our Newsletter Now</h6>
-                    <p>Get E-mail updates about our latest shop and special offers.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Enter your mail">
-                        <button type="submit" class="site-btn">Subscribe</button>
-                    </form>
-                    <div class="footer__widget__social">
-                        <a href="https://www.facebook.com/nongorfoodbd"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/nongorfood/"><i class="fa fa-instagram"></i></a>
-                        <a href="https://twitter.com/nongorfood"><i class="fa fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/channel/UC-0rsi0dXMF_k1zKjXZOAqw"><i class="fa fa-youtube"></i></a>
+
+ <!--Footer Section Start  -->
+ <footer class="footer footer--one">
+    <div class="container">
+        <div class="footer__top">
+            <div class="row">
+                <!-- Brand information-->
+                <div class="col-lg-4">
+                    <div class="footer__brand-info">
+                        @php
+                        $logo = App\Models\CompanyLogo::latest()->first();
+                        @endphp
+                        <div class="footer__brand-info-logo">
+                            @if($logo)
+                            <a href="{{ route('home') }}"><img src="{{url('/public/uploads/', $logo->image)}}" alt=""></a>
+                            @else
+                                <a href="{{ route('home') }}">Inseart a logo</a>
+                             @endif
+                        </div>
+                        <p class="font-body--md-400">
+                            Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.
+                        </p>
+                        <div class="footer__brand-info-contact">
+                            <a href="#"><span>(219)555-0114</span></a>
+                            or
+                            <a href="#"><span>Proxy@gmail.com</span></a>
+                        </div>
                     </div>
+                </div>
+                <!-- My Account  -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <ul class="footer__navigation">
+                        <li class="footer__navigation-title">
+                            <h2 class="font-body--lg-500">My Account</h2>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> My Account </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> order History </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Shoping Cart </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Wishlist </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Helps  -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <ul class="footer__navigation">
+                        <li class="footer__navigation-title">
+                            <h2 class="font-body--lg-500">My Helps</h2>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Contact </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> faq </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Terms &amp; Condition </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Privacy Policy </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Proxy -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <ul class="footer__navigation">
+                        <li class="footer__navigation-title">
+                            <h2 class="font-body--lg-500">Proxy</h2>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> About </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Shop </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Product </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Track Order </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Categories -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <ul class="footer__navigation">
+                        <li class="footer__navigation-title">
+                            <h2 class="font-body--lg-500">Categories</h2>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Fruit &amp; Vegetables </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Meat &amp; Fish </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Bread &amp; Bakery </a>
+                        </li>
+                        <li class="footer__navigation-link">
+                            <a href="#"> Beauty &amp; Health </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer__copyright">
-                    <div class="footer__copyright__text"><p>
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  by {{env('app_name')}}
-                    </p></div>
-                    <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
-                </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright-text">
+                {{env('app_name')}} © <script>document.write(new Date().getFullYear());</script>. All Rights Reserved
+            </p>
+            <div class="footer__partner d-flex">
+                <a href="#" class="footer__partner-item">
+                    <img src="src/images/brand-icon/img-01.png" alt="img" />
+                </a>
+                <a  href="#" class="footer__partner-item">
+                    <img src="src/images/brand-icon/img-02.png" alt="img" />
+                </a>
+                <a  href="#" class="footer__partner-item">
+                    <img src="src/images/brand-icon/img-03.png" alt="img" />
+                </a>
+                <a  href="#" class="footer__partner-item">
+                    <img src="src/images/brand-icon/img-04.png" alt="img" />
+                </a >
+                <a  href="#" class="footer__partner-item">
+                    <img src="src/images/brand-icon/img-05.png" alt="img" />
+                </a>
             </div>
         </div>
     </div>
 </footer>
-<!-- Footer Section End -->
+<!--Footer Section end  -->

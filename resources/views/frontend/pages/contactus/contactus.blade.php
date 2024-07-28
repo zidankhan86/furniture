@@ -4,7 +4,7 @@
 
   @section('content')
 
-@include('frontend\components\contactus')
+@include('frontend.components.contactus')
 
 
 @endsection
