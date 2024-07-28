@@ -138,8 +138,8 @@
                     <a href="product-details.html" class="cards-md__info-left">
                         <h6 class="font-body--md-400">{{ $item->name }}</h6>
                         <div class="cards-md__info-price">
-                            <span class="font-body--lg-500">{{ $item->price }}</span>
-                            <del class="font-body--lg-400">{{ $item->price }}</del>
+                            <span class="font-body--lg-500">{{ $item->price }} Tk</span>
+                            <del class="font-body--lg-400">{{ $item->price }} Tk</del>
                         </div>
                        
                     </a>

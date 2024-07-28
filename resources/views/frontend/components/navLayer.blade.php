@@ -1,6 +1,53 @@
+
 <!-- Header Section start -->
         <header class="header header--one">
-            
+            <div class="header__top">
+                <div class="container">
+                    <div class="header__top-content">
+                        <div class="header__top-left">
+                            <p class="font-body--sm">
+                                
+                                Store Location: Online
+                            </p>
+                        </div>
+                        <div class="header__top-right">
+                           
+                            <div class="header__in">
+                                @auth
+                                @if (auth()->user()->role == 'customer')
+                                    <a href="{{ route('logout') }}"><i class="fa fa-user"></i> Logout</a>
+                                @endif
+                            @endauth
+
+
+                            @auth
+                            @else
+                                <a href="{{ route('login.frontend') }}"><i class="fa fa-user"></i> Sign in</a>
+                            @endauth
+
+                               
+                                <span>/</span>
+                                
+                                @guest
+                                <a href="{{ route('registration') }}">
+                                    <div>Registration</div>
+                                </a>
+                            @endguest
+
+                            @auth
+                                @if (auth()->user()->role == 'customer')
+                                    <a href="{{ url('/profile') }}">
+                                        <div>Profile</div>
+                                    </a>
+                                @endif
+                            @endauth
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="header__center">
                 <div class="container">
                     <div class="header__center-content">
