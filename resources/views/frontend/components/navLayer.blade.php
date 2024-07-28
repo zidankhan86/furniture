@@ -108,7 +108,7 @@
                             </li>
                             <!-- Shopepages -->
                             <li class="header__navigation-menu-link">
-                                <a href="#">
+                                <a href="{{ url('/product') }}">
                                     Products
                                     
                                 </a>
