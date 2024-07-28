@@ -61,7 +61,7 @@
                             </button>
                             @php
                             $logo = App\Models\CompanyLogo::latest()->first();
-                    @endphp
+                            @endphp
                             <div>
                                 @if($logo)
                                 <a href="{{ route('home') }}"><img src="{{url('/public/uploads/', $logo->image)}}" alt=""></a>
@@ -113,7 +113,7 @@
                             </div>
                             <div class="header__cart-item">
                                 <div class="header__cart-item-content" id="cart-bag">
-                                    <button class="cart-bag">
+                                    <a href="{{ url('/view-cart') }}" class="cart-bag">
                                         <svg width="34" height="35" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M11.3333 14.6667H7.08333L4.25 30.25H29.75L26.9167 14.6667H22.6667M11.3333 14.6667V10.4167C11.3333 7.28705 13.8704 4.75 17 4.75V4.75C20.1296 4.75 22.6667 7.28705 22.6667 10.4167V14.6667M11.3333 14.6667H22.6667M11.3333 14.6667V18.9167M22.6667 14.6667V18.9167"
@@ -124,7 +124,7 @@
                                             />
                                         </svg>
                                         
-                                    </button>
+                                    </a>
                                     <div class="header__cart-item-content-info">
                                     
 
@@ -200,141 +200,9 @@
                                 </button>
                             </div>
                         </form>
-                        <ul class="header__mobile-menu">
-                            <li class="header__mobile-menu-item active">
-                                <a href="#" class="header__mobile-menu-item-link">
-                                    Home
-                                    <span class="drop-icon">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.33332 5.66667L7.99999 10.3333L12.6667 5.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
-                                </a>
-                                <ul class="header__mobile-dropdown-menu">
-                                    <li class="header__mobile-dropdown-menu-link active">
-                                        <a href="index.html">Home 01</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="home-02.html">Home 02</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="home-03.html">Home 03</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="home-04.html">Home 04</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="home-05.html">Home 05</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="header__mobile-menu-item">
-                                <a href="#" class="header__mobile-menu-item-link">
-                                    Shop
-                                    <span class="drop-icon">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.33332 5.66667L7.99999 10.3333L12.6667 5.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
-                                </a>
-                                <ul class="header__mobile-dropdown-menu">
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="shop-01.html">Shop 01</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="shop-02.html">Shop 02</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="header__mobile-menu-item">
-                                <a href="#" class="header__mobile-menu-item-link">
-                                    Pages
-                                    <span class="drop-icon">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.33332 5.66667L7.99999 10.3333L12.6667 5.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
-                                </a>
-                                <ul class="header__mobile-dropdown-menu">
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="product-details.html">Product Details</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="wishlist.html">Wishlist</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="shopping-cart.html">Shopping Cart</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="checkout.html">Checkout</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="sign-in.html">Sign in</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="create-account.html">Create Account</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="user-dashboard.html">User Dashboard</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="order-history.html">order history</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="order-details.html">Order Details</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="account-setting.html">Account Settings</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="faq.html">faq</a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="404.html">404</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="header__mobile-menu-item">
-                                <a href="#" class="header__mobile-menu-item-link">
-                                    Blog
-                                    <span class="drop-icon">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.33332 5.66667L7.99999 10.3333L12.6667 5.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
-                                </a>
-                                <ul class="header__mobile-dropdown-menu">
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="single-blog.html">Single Blog </a>
-                                    </li>
-                                    <li class="header__mobile-dropdown-menu-link">
-                                        <a href="blog-list.html">Blog list</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="header__mobile-menu-item">
-                                <a href="about.html" class="header__mobile-menu-item-link">About</a>
-                            </li>
-                            <li class="header__mobile-menu-item">
-                                <a href="contact.html" class="header__mobile-menu-item-link">Contacts</a>
-                            </li>
-                        </ul>
+                       
                     </div>
-                    <div class="header__mobile-bottom">
-                        <div class="header__mobile-user">
-                            <div class="header__mobile-user--img">
-                                <img src="frontend/src/images/user/img-03.png" alt="user" />
-                            </div>
-                            <div class="header__mobile-user--info">
-                                <h2 class="font-body--lg-500">Dianne Russell</h2>
-                                <p class="font-body--md-400">dianne.russell@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="header__mobile-action d-none">
-                            <a href="#" class="button button--md">Sign in</a>
-                            <a href="#" class="button button--md button--disable">Sign up</a>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </header>
