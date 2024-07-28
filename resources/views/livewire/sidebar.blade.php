@@ -59,9 +59,7 @@
                     <div class="collapse" id="collapseBanners" aria-labelledby="headingOne"
                         data-bs-parent="#sidenavAccordion">
 
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{ route('hero.list') }}">Website Banner</a>
-                        </nav>
+                        
                      
 
                         <nav class="sb-sidenav-menu-nested nav">

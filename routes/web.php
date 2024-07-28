@@ -28,11 +28,10 @@ use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 
 
-//========Routes=======//
+
 
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
-//hero
-Route::get('/hero',[HeroBannerController::class,'hero']);
+
 //product
 Route::get('/product',[FrontendProductController::class,'product']);
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('details');
@@ -54,12 +53,9 @@ Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
- //Social share
-Route::get('/social-media-share', [SocialShareButtonsController::class,'ShareWidget']);
-
 //Backend
 
-//Login //Registration
+//Auth
 Route::controller(LoginController::class)->group(function(){
     Route::get('/login','showLoginForm')->name('login');
     Route::post('/login','loginProcess')->name('login.submit');
@@ -143,13 +139,7 @@ Route::controller(CompanyLogoController::class)->group(function(){
     Route::post('/logo-update/{id}','logo_update')->name('logo.update');
 });
 
-//Hero
-Route::controller(HeroBannerController::class)->group(function(){
-    Route::get('/hero-form','heroPost')->name('hero.post');
-    Route::post('/hero-store','herostore')->name('hero.store');
-    Route::get('/hero-list','herolist')->name('hero.list');
-    Route::get('/hero-delete/{id}','herodelete')->name('hero.delete');
-});
+
 
 //Order
 Route::controller(OrderController::class)->group(function(){
