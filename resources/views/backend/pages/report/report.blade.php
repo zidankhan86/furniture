@@ -40,8 +40,8 @@
 
             <th scope="col">Serial</th>
             <th scope="col">Product</th>
-            <th scope="col">Total</th>
-            <th scope="col">Full Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Name</th>
             <th scope="col">Address</th>
             <th scope="col">Phone</th>
             <th scope="col">Email</th>

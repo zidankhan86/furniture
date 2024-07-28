@@ -9,7 +9,7 @@
 
 
 
- <br><h4 class="text-success text-center">Contact Us</h4><br>
+ <br><h4 class="text-success text-center">User Feedback</h4><br>
 
 
 
@@ -18,9 +18,8 @@
       <tr>
         <th scope="col">serial</th>
         <th scope="col"> Name</th>
-        <th scope="col">Email</th>
         <th scope="col"> Message</th>
-        <th scope="col">Action</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -34,17 +33,15 @@
 
         <th scope="row">{{ $serial++}}</th>
         <td>{{ $item->name}}</td>
-        <td>{{ $item->email}}</td>
+      
 
 
         <td>
-            <a href="{{route('contact.view' ,$item->id)}}" class="btn btn-info"><i class="fas fa-envelope"> </i> OPEN</a>
+            <a href="{{route('contact.view' ,$item->id)}}"> <B>See More</B></a>
 
 
         </td>
-        <td>
-            <a href="" class="btn btn-success"> <i class="fas fa-check"></i></a>
-        </td>
+  
 
       </tr>
       @endforeach

@@ -56,39 +56,6 @@ class ProductController extends Controller
     }
 
 
-    public function order(Request $request){
-
-        $validator = Validator::make($request->all(), [
-            'address'           => 'required|string',
-            'phone'             => 'required|string',
-            'email'             => 'required|email',
-            'total_price'       => 'nullable|numeric|min:0',
-            'name'              => 'nullable|string',
-
-        ]);
-
-        if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
-        }
-
-        $order = Order::create([
-            "name"              =>$request->name,
-            "address"           =>$request->address,
-            "phone"             =>$request->phone,
-            "email"             =>$request->email,
-            "total_price"       => $request->total_price, 
-            "name"              => implode(', ', $request->input('product_names', [])),
-            "user_id"           =>$request->user_id,
-            "product_id"        =>$request->product_id,
-        ]);
-
-        session()->forget('cart');
-
-        notify()->success('Success, Order Confirmed!');
-
-        return redirect()->route('home');
-
-    }
-
+  
 
 }

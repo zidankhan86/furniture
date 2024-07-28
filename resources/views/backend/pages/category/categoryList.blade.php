@@ -17,7 +17,7 @@
                         <thead>
                         <tr>
                             <th scope="col">serial</th>
-                            <th scope="col">Type Name</th>
+                            <th scope="col">Type</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>

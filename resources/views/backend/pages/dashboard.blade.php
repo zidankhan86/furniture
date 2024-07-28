@@ -9,36 +9,36 @@
     <div class="row">
         <div class="col-xl-3 col-md-6">
             <div class="card bg-success text-white mb-4">
-                <div class="card-body">NUMBER OF ORDERS</div>
+                <div class="card-body"> ORDERS ({{$totalOrder}})</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{route('order.list')}}">{{$totalOrder}}</a>
+                    <a class="small text-white stretched-link" href="{{route('order.list')}}">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-success text-white mb-4">
-                <div class="card-body">NUMBER OF PRODUCTS</div>
+            <div class="card bg-warning text-white mb-4">
+                <div class="card-body">PRODUCTS ({{$totalProducts}})</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{route('product.list')}}">{{$totalProducts}}</a>
+                    <a class="small text-white stretched-link" href="{{route('product.list')}}">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-success text-white mb-4">
-                <div class="card-body">NUMBER OF CATEGORIES</div>
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">CATEGORIES ({{$totalCategories}})</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{route('category.list')}}">{{$totalCategories}}</a>
+                    <a class="small text-white stretched-link" href="{{route('category.list')}}">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-success text-white mb-4">
-                <div class="card-body">NUMBER OF USERS</div>
+            <div class="card bg-dark text-white mb-4">
+                <div class="card-body">USERS ({{ $totalUsers }})</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">{{ $totalUsers }}</a>
+                    <a class="small text-white stretched-link" href="#">USERS</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>

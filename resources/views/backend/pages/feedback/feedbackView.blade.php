@@ -49,8 +49,8 @@
 <main role="main">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Message</h1>
-            <p class="lead text-muted">Here is the message detail.</p>
+            <h1 class="jumbotron-heading">User Feedback</h1>
+            
         </div>
     </section>
 
@@ -59,16 +59,14 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            <h5 class="mb-0">See Message</h5>
-                        </div>
+                       
                         <div class="card-body">
                             <p class="card-text">{{$messages->message}}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-muted">{{ $messages->created_at->diffForHumans() }}</small>
                             </div>
                             <div class="btn-group mt-3">
-                                <a href="{{ route('contact.list') }}" class="btn btn-sm btn-outline-secondary">Back to Messages</a>
+                                <a href="{{ route('contact.list') }}" class="btn btn-sm btn-outline-secondary">Back to Feedback</a>
                                 
                             </div>
                         </div>
