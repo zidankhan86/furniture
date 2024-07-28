@@ -141,26 +141,7 @@
                             <span class="font-body--lg-500">{{ $item->price }}</span>
                             <del class="font-body--lg-400">{{ $item->price }}</del>
                         </div>
-                        <ul class="cards-md__info-rating d-flex">
-                            @php
-                            $productRatings = App\Models\ProductRating::where('product_id', $item->id)->get();
-                            $averageRating = min($productRatings->avg('rating'), 5);
-                            $fullStars = floor($averageRating);
-                            $hasHalfStar = ($averageRating - $fullStars) >= 0.5;
-                        @endphp
-                        <div class="star-rating">
-                            @for ($i = 1; $i <= 5; $i++)
-                            @if ($i <= $fullStars)
-                                <span class="star" style="font-size: 18px; color: gold;">&#9733;</span>
-                            @elseif ($hasHalfStar)
-                                <span class="star half" style="font-size: 18px; color: gold;">&#9733;</span>
-                                @php $hasHalfStar = false; @endphp
-                            @else
-                                <span class="star" style="font-size: 18px; color: gray;">&#9733;</span>
-                            @endif
-                        @endfor
-                    </div>
-                        </ul>
+                       
                     </a>
                     <div class="cards-md__info-right">
                         <a href="{{route('add.to.cart',$item->id)}}"> <span class="action-btn">
