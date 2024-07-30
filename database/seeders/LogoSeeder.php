@@ -16,7 +16,7 @@ class LogoSeeder extends Seeder
        CompanyLogo::create([
 
             'tittle'=>"100% Trusted",
-            'image'=>"2024071312150715.png",
+            'image'=>"20240729302024.png",
 
         ]);
     }

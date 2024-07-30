@@ -12,7 +12,7 @@
 
                                 <div class="banner__wrapper-text">
                                     <h2 class="font-title--xl">
-                                        Fresh & Healthy Organic Food
+                                    Fresh & Healthy Organic Food
                                     </h2>
                                     <div class="sale-off">
                                         <h5 class="font-body--xxl-500">Sale up to <span>30% off</span></h5>

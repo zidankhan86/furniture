@@ -12,11 +12,8 @@
                 <th scope="col">Image</th>
                 <th scope="col"> Name</th>
                 <th scope="col">Category</th>
-                <th scope="col">Weight</th>
                 <th scope="col">Total Stock</th>
                 <th scope="col">Price</th>
-                <th scope="col">Dicount</th>
-                <th scope="col">Shipping</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
@@ -32,11 +29,8 @@
                     </td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->ProductCategory->type }}</td>
-                    <td>{{ $item->weight }} Kg</td>
                     <td>{{ $item->stock }}</td>
                     <td>{{ $item->price }} Tk.</td>
-                    <td>{{ $item->discount }}.00%</td>
-                    <td>{{ $item->time }}</td>
                     <td>{{ $item->status == 1 ? 'Active' : ($item->status == 2 ? 'Trending' : 'Inactive') }}</td>
                     <td>
                         <a href="{{ route('product.edit', $item->id) }}" class="btn btn-success"><i
