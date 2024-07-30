@@ -24,7 +24,7 @@ class HomeController extends Controller
           $categories = Category::latest()->limit(9)->get();
          
           //Products
-          $products = Product::simplePaginate(20);
+          $products = Product::simplePaginate(16);
 
           //Latest Category
           $latestCategories = Category::latest()->limit(5)->get();
@@ -33,11 +33,9 @@ class HomeController extends Controller
           $latestProducts = Product::where('status',1)->latest()->limit(6)->get();
 
         
-         //Trending
-         $trendingProduct = Product::where('status',2)->latest()->limit(8)->get();
          return view('frontend.pages.home',
          compact('categories','products','latestProducts',
-        'latestCategories','trendingProduct'));
+        'latestCategories'));
     }
 
        public function categoryWiseProduct($id){

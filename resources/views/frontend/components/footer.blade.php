@@ -114,23 +114,7 @@
             <p class="footer__copyright-text">
                 {{env('app_name')}} © <script>document.write(new Date().getFullYear());</script>. All Rights Reserved
             </p>
-            <div class="footer__partner d-flex">
-                <a href="#" class="footer__partner-item">
-                    <img src="src/images/brand-icon/img-01.png" alt="img" />
-                </a>
-                <a  href="#" class="footer__partner-item">
-                    <img src="src/images/brand-icon/img-02.png" alt="img" />
-                </a>
-                <a  href="#" class="footer__partner-item">
-                    <img src="src/images/brand-icon/img-03.png" alt="img" />
-                </a>
-                <a  href="#" class="footer__partner-item">
-                    <img src="src/images/brand-icon/img-04.png" alt="img" />
-                </a >
-                <a  href="#" class="footer__partner-item">
-                    <img src="src/images/brand-icon/img-05.png" alt="img" />
-                </a>
-            </div>
+           
         </div>
     </div>
 </footer>
