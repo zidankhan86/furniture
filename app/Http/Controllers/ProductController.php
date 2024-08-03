@@ -39,10 +39,7 @@ class ProductController extends Controller
             $images=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('uploads', $images, 'public');
         }
-        //dd($imageName);
-        // dd($request->all());
-
-
+      
         $product=  Product::create([
 
              "name"                 =>$request->name,
@@ -67,8 +64,8 @@ class ProductController extends Controller
             $product->update(['discounted_price' => $discountedPrice]);
         }
 
-
-          return back()->with('success', 'Product Added Successfully!');
+            Alert::success('Product Added Successfully!');
+          return back();
 
         }
 
@@ -126,7 +123,8 @@ class ProductController extends Controller
              'status'               =>$request->status,
             ]);
 
-            return redirect()->back()->with('success','product edited successful!!');
+            Alert::success('product Updated successfully!!');
+            return redirect()->back();
 
         }
 
@@ -141,43 +139,5 @@ class ProductController extends Controller
             return redirect()->back();
         }
 
-
-        public function storeRating(Request $request, $id)
-        {
-            //dd($request->all());
-            $request->validate([
-                'rating'=>'required'
-            ]);
-
-            $product = Product::find($id);
-
-            $rating = new ProductRating();
-            $rating->product_id = $product->id;
-            $rating->rating = $request->input('rating');
-            $rating->save();
-            notify()->success('Thank you for your feedback.');
-            return back();
-            }
-
-            //Trending Product
-              public function trendingProduct(){
-
-                $trendingProduct = Product::where('status',2)->latest()->limit(8)->get();
-
-                return view('frontend.components.trendingProduct',compact('trendingProduct'));
-            }
-            public function trendingStatus($id){
-
-                $product = Product::find($id);
-
-                $product->update([
-                    "status"=>"2"
-                ]);
-
-                Alert::success('Your status has been changed');
-
-                return redirect()->route('product.list');
-
-            }
 
             }

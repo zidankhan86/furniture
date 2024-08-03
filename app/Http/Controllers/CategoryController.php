@@ -39,7 +39,8 @@ class CategoryController extends Controller
 
         ]);
 
-        return back()->with('success', 'Category Added Successfully');
+        Alert::success('Category Added Successfully!!');
+        return back();
 
     }
     public function categoryList(){
@@ -76,13 +77,14 @@ class CategoryController extends Controller
 
         ]);
 
-        return redirect()->back()->with('success','Category Updated Successfully!!');
+        Alert::success('Category Updated Successfully!!');
+        return redirect()->back();
     }
 
     public function categordelete($id){
         $delete = Category::find($id);
         $delete->delete();
-
+        Alert::success('Category Deleted Successfully!!');
         return back();
     }
     public function websiteTitle(){

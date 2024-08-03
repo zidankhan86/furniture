@@ -47,7 +47,7 @@ class AddToCartController extends Controller
                 ];
 
                 session()->put('cart',$cart);
-              notify()->success('New product added.');
+              notify()->success('New product added to the cart');
                 return redirect()->back();
 
             }
@@ -58,7 +58,7 @@ class AddToCartController extends Controller
             $cart[$id]['subtotal']=$cart[$id]['quantity'] * $cart[$id]['price'];
             session()->put('cart',$cart);
 
-           notify()->success('Cart updated.');
+           notify()->success('Cart successfully updated.');
             return redirect()->back();
           }
 
@@ -77,7 +77,7 @@ class AddToCartController extends Controller
             public function clearCart()
             {
                 session()->forget('cart');
-                notify()->success('Cart Clear Success.');
+                notify()->warning('Cart Clear Successfully.');
                 return redirect()->back();
             }
 
@@ -88,7 +88,7 @@ class AddToCartController extends Controller
               unset($cart[$id]);
         //      dd($cart);
                 session()->put('cart',$cart);
-                notify()->success('Item removed.');
+                notify()->warning('Product removed successfully');
               return redirect()->back();
             }
         }

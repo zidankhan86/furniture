@@ -34,12 +34,12 @@ class WishlistController extends Controller
             'user_id' => $user->id
         ]);
 
-        notify()->success('Item added to wishlist.');
+        notify()->success('success','Product added to wishlist.');
         return redirect()->back();
     }
 
-    notify()->info('Product is already in the wishlist');
-    return redirect()->back();
+        notify()->error('Failed','Product is already in the wishlist');
+        return redirect()->back();
 }
 
 

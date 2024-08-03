@@ -77,7 +77,16 @@
                         </div>
                     @endforeach
                 @else
-                    <p class="alert alert-danger">No Product Found.</p>
+                <section class="section section--xl error" style="text-align: center">
+                    <div class="container">
+                        <div class="error__content">
+                          
+                            <h2 class="font-title--lg">Oops! no product found</h2>
+                            <p>Use different keyword and try again</p>
+                            <a href="{{ route('home') }}" class="button button--md">Back to Home</a>
+                        </div>
+                    </div>
+                </section>
                 @endif
 
             </div>

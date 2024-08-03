@@ -221,7 +221,7 @@
         </div>
         <div class="form-wrapper__content">
           
-          <a href="{{route('password.request')}}">Forget Password </a>
+      
         </div>
         <div class="form-button">
           <button class="button button--md w-100">Login</button>

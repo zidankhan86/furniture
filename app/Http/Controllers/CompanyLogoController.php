@@ -25,7 +25,8 @@ if ($validator->fails()) {
 
 $existingBannersCount = CompanyLogo::count();
 if ($existingBannersCount >= 2) {
-    return back()->with('error', 'Maximum number of banners reached');
+    Alert::error('Maximum number of Logo reached');
+    return back();
 }
 
 $imageName = null;
@@ -35,8 +36,6 @@ if ($request->hasFile('image')) {
     $file->storeAs('uploads', $imageName, 'public');
 }
 
-// dd($imageName);
-//dd($request->all());
 
     CompanyLogo::create([
 
@@ -45,7 +44,8 @@ if ($request->hasFile('image')) {
 
     ]);
 
-    return back()->with('success','Logo Uploaded Successfully!');
+    Alert::success('Logo Uploaded Successfully!');
+    return back();
 
    }
 
@@ -55,8 +55,8 @@ if ($request->hasFile('image')) {
     $delete = CompanyLogo::find($id);
 
     $delete->delete();
-
-    return back()->with('success','logo deleted!!');
+    Alert::success('logo deleted!!');
+    return back();
 
    }
    public function LogoList()
@@ -94,7 +94,8 @@ if ($request->hasFile('image')) {
         "image"=>$imageName
     ]);
 
-    return redirect()->back()->with('success','Logo Updated');
+    Alert::success('Logo Updated!!');
+    return redirect()->back();
 
     }
     }

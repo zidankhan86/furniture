@@ -28,32 +28,25 @@ use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
 
 
-
-
+//Payment
+Route::post('/pay/{id}', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
-
 //product
 Route::get('/product',[FrontendProductController::class,'product']);
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('details');
 Route::get('/search',[SearchController::class,'search'])->name('user.search');
 
-//CategoryWiseProduct
-Route::get('/category/{id}',[FrontendHomeController::class,'categoryWiseProduct']);
+
 //ContactUs
 Route::get('/contact',[ContactController::class,'contact']);
 Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
-//login
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
 //profile
-Route::get('/profile',[ProfileController::class,'profile']);
+Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
 Route::get('/admin-profile',[ProfileController::class,'adminProfile']);
-
-Route::post('/pay/{id}', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
-Route::post('/success', [SslCommerzPaymentController::class, 'success']);
-Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
-Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
-
-//Backend
 
 //Auth
 Route::controller(LoginController::class)->group(function(){
@@ -63,12 +56,6 @@ Route::controller(LoginController::class)->group(function(){
     Route::get('/registration', 'registration')->name('registration');
     Route::post('/registration', 'registrationStore')->name('registration.submit');
 });
-
-//Forget password
-Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
 
 //Middleware for check valid user
 Route::group(['middleware' => 'customerAuth'], function () {
@@ -91,16 +78,11 @@ Route::controller(AddToCartController::class)->group(function(){
 //Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 
-//Order Create for both
-Route::post('/product-order/{id}',[FrontendProductController::class,'order'])->name('product.order.store');
 });
 
 //middleware auth and admin
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
-//Notification
-Route::get('/admin/notifications', [NotificationController::class, 'notifications'])->name('admin.notifications');
 
-//Category
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 
 //Category
@@ -122,10 +104,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/product-edit/{id}','productEdit')->name('product.edit');
     Route::post('/product-update/{id}','productupdate')->name('product.update');
     Route::get('/product-delete/{id}','productDelete')->name('product.delete');
-    Route::post('/product/rate/{id}','storeRating')->name('product.rate');
-    //Trending Products
-    Route::get('/trending/product', 'trendingProduct')->name('trending.product');
-    Route::get('/trending/status/{id}','trendingStatus')->name('trending.status');
+
 });
 
 

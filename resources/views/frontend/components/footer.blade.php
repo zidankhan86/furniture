@@ -18,13 +18,11 @@
                                 <a href="{{ route('home') }}">Inseart a logo</a>
                              @endif
                         </div>
-                        <p class="font-body--md-400">
-                            Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.
-                        </p>
+                       
                         <div class="footer__brand-info-contact">
                             <a href="#"><span>(219)555-0114</span></a>
                             or
-                            <a href="#"><span>Proxy@gmail.com</span></a>
+                            <a href="#"><span>iubat@gmail.com</span></a>
                         </div>
                     </div>
                 </div>
@@ -37,15 +35,13 @@
                         <li class="footer__navigation-link">
                             <a href="#"> My Account </a>
                         </li>
+                        @auth
                         <li class="footer__navigation-link">
-                            <a href="#"> order History </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Shoping Cart </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Wishlist </a>
-                        </li>
+                            <a href="{{ route('profile') }}"> order History </a>
+                        </li> 
+                        @endauth
+                       
+                      
                     </ul>
                 </div>
                 <!-- Helps  -->
@@ -55,17 +51,9 @@
                             <h2 class="font-body--lg-500">My Helps</h2>
                         </li>
                         <li class="footer__navigation-link">
-                            <a href="#"> Contact </a>
+                            <a href="{{ url('contact') }}"> Contact </a>
                         </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> faq </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Terms &amp; Condition </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Privacy Policy </a>
-                        </li>
+                       
                     </ul>
                 </div>
                 <!-- Proxy -->
@@ -74,38 +62,26 @@
                         <li class="footer__navigation-title">
                             <h2 class="font-body--lg-500">Proxy</h2>
                         </li>
+                       
+                      
                         <li class="footer__navigation-link">
-                            <a href="#"> About </a>
+                            <a href="{{ url('/product') }}"> Product </a>
                         </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Shop </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Product </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Track Order </a>
-                        </li>
+                       
                     </ul>
                 </div>
                 <!-- Categories -->
                 <div class="col-lg-2 col-md-3 col-6">
                     <ul class="footer__navigation">
                         <li class="footer__navigation-title">
-                            <h2 class="font-body--lg-500">Categories</h2>
+                            <h2 class="font-body--lg-500">Website Name</h2>
                         </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Fruit &amp; Vegetables </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Meat &amp; Fish </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Bread &amp; Bakery </a>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> Beauty &amp; Health </a>
-                        </li>
+                       <li class="footer__navigation">
+                        
+                       </li>
+                       <li class="footer__navigation-link">
+                        <a href="{{ url('/home') }}"> {{env('app_name')}} </a>
+                    </li>
                     </ul>
                 </div>
             </div>
