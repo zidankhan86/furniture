@@ -22,7 +22,7 @@ class HomeController extends Controller
      
          
           //Products
-          $products = Product::simplePaginate(16);
+          $products = Product::simplePaginate(15);
 
          return view('frontend.pages.home',
          compact('products'));

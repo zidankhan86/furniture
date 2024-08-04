@@ -163,7 +163,7 @@
                             </li>
                             
                             <li class="header__navigation-menu-link">
-                                <a href="about.html">About us </a>
+                                <a href="{{ route('about') }}">About us </a>
                             </li>
                             <li class="header__navigation-menu-link">
                                 <a href="{{ url('/contact') }}">Contact us</a>

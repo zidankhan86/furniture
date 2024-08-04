@@ -20,12 +20,15 @@ use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\HeroBannerController;
 use App\Http\Controllers\CompanyLogoController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\frontend\AboutUsController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\SocialShareButtonsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\ProductController as FrontendProductController;
+
+
 
 
 //Payment
@@ -39,6 +42,7 @@ Route::get('/product',[FrontendProductController::class,'product']);
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('details');
 Route::get('/search',[SearchController::class,'search'])->name('user.search');
 
+Route::get('/about',[AboutUsController::class,'about'])->name('about');
 
 //ContactUs
 Route::get('/contact',[ContactController::class,'contact']);
