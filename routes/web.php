@@ -68,15 +68,14 @@ Route::controller(AddToCartController::class)->group(function(){
     Route::get('add-to-cart/{id}','addToCart')->name('add.to.cart');
     Route::get('/view-cart','viewCart');
     Route::get('/clear-cart','clearCart')->name('cart.clear');
-    Route::get('/cart-item/delete/{id}','cartItemDelete')->name('cart.item.delete');
-    });
+    Route::get('/cart-item/delete/{id}','cartItemDelete')->name('cart.item.delete');});
+    
     //Wishlist
  Route::controller(WishlistController::class)->group(function(){
     Route::get('/wishlist',  'index')->name('wishlist.index');
     Route::post('/wishlist/add/{id}', 'addToWishlist')->name('add.to.wishlist');
     Route::get('/wishlist/remove/{wishlist}','removeFromWishlist')->name('remove.Wishlist');
-    Route::post('/cart/add-from-wishlist/{id}','addToCartFromWishlist')->name('cart.add-from-wishlist');
- });
+    Route::post('/cart/add-from-wishlist/{id}','addToCartFromWishlist')->name('cart.add-from-wishlist');});
 
 
 //Cart Product Order
@@ -97,8 +96,7 @@ Route::controller(CategoryController::class)->group(function(){
     Route::get('/category-list','categoryList')->name('category.list');
     Route::get('/category-edit/{id}','categoryedit')->name('category.edit');
     Route::post('/category-update/{id}','categorupdate')->name('category.update');
-    Route::get('/category-delete/{id}','categordelete')->name('category.delete');
-});
+    Route::get('/category-delete/{id}','categordelete')->name('category.delete');});
 
 //Product
 Route::controller(ProductController::class)->group(function(){
@@ -107,10 +105,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/product-list','productList')->name('product.list');
     Route::get('/product-edit/{id}','productEdit')->name('product.edit');
     Route::post('/product-update/{id}','productupdate')->name('product.update');
-    Route::get('/product-delete/{id}','productDelete')->name('product.delete');
-
-});
-
+    Route::get('/product-delete/{id}','productDelete')->name('product.delete');});
 
 //Logo
 Route::controller(CompanyLogoController::class)->group(function(){
@@ -119,10 +114,7 @@ Route::controller(CompanyLogoController::class)->group(function(){
     Route::get('/logo-delete/{id}','LogoDelete')->name('logo.delete');
     Route::get('/logo-list','LogoList')->name('logo.list');
     Route::get('/logo-edit/{id}','Logo_edit')->name('logo.edit');
-    Route::post('/logo-update/{id}','logo_update')->name('logo.update');
-});
-
-
+    Route::post('/logo-update/{id}','logo_update')->name('logo.update');});
 
 //Order
 Route::controller(OrderController::class)->group(function(){
