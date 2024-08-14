@@ -14,7 +14,7 @@ class TitleSeeder extends Seeder
     public function run(): void
     {
         Title::create([
-        "title"=>"eCommerce"
+        "title"=>"ahadecom"
         ]);
     }
 }
