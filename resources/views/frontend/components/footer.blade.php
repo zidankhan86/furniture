@@ -20,7 +20,7 @@
                         </div>
                        
                         <div class="footer__brand-info-contact">
-                            <a href="#"><span>(219)555-0114</span></a>
+                            <a href="#"><span>01770000000</span></a>
                             or
                             <a href="#"><span>iubat@gmail.com</span></a>
                         </div>

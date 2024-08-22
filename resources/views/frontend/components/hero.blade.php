@@ -20,7 +20,7 @@
                                             Free shipping on all your order.
                                         </p>
                                     </div>
-                                    <a href="#" class="button button--md">
+                                    <a href="{{url('/product')}}" class="button button--md">
                                         Shop now
                                         <span>
                                             <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@
                                             Free shipping on all your order.
                                         </p>
                                     </div>
-                                    <a href="#" class="button button--md">
+                                    <a href="{{url('/product')}}" class="button button--md">
                                         Shop now
                                         <span>
                                             <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,7 @@
                                             Free shipping on all your order.
                                         </p>
                                     </div>
-                                    <a href="#" class="button button--md">
+                                    <a href="{{url('/product')}}" class="button button--md">
                                         Shop now
                                         <span>
                                             <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +96,7 @@
                             <h5 class="font-body--md-500">Summer Sale</h5>
                             <h2 class="font-title--sm">75% off</h2>
                             <p class="font-body--md-400">Only Fruit & Vegetable</p>
-                            <a href="#" class="button button--md">
+                            <a href="{{url('/product')}}" class="button button--md">
                                 Shop now
                                 <span>
                                     <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +116,7 @@
                                 Special Products Deal of the Month
                             </h2>
 
-                            <a href="#" class="button button--md">
+                            <a href="{{url('/product')}}" class="button button--md">
                                 Shop now
                                 <span>
                                     <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">

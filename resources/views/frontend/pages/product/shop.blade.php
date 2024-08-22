@@ -39,7 +39,7 @@
                 <span class="title">Best Deals</span>
                 <h2 class="font-title--lg">Sale of the Month</h2>
                 <div id="countdown" class="countdown-clock"></div>
-                <a href="#" class="button button--md">
+                <a href="{{url('/product')}}" class="button button--md">
                     Shop now
                     <span>
                         <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
