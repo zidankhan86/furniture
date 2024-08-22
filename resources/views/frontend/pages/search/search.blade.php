@@ -7,7 +7,7 @@
         <div class="container">
             <div class="section__head">
                 <h2 class="section--title-one font-title--sm">Search products</h2>
-                <a href="shop-01.html">
+                <a href="{{url('/product') }}">
                     View All
                     <span>
                         <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">

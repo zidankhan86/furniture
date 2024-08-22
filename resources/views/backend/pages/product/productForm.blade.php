@@ -90,7 +90,13 @@
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-
+                <div class="mb-3 col-md-12">
+                    <label for="exampleInputDiscount" class="form-label">Discount</label>
+                    <input type="number" class="form-control" id="exampleInputDiscount" value="{{ old('discount') }}" name="discount" placeholder="25%..">
+                    @error('discount')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="text-center mt-3">
                     <button type="submit" class="btn btn-primary">+ Add Product</button>
                 </div>
