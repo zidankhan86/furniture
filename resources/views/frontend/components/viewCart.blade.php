@@ -6,7 +6,7 @@
       <div class="container">
         <ul class="breedcrumb__content">
           <li>
-            <a href="index.html">
+            <a href="{{ route('home') }}">
               <svg
                 width="18"
                 height="19"
@@ -26,7 +26,7 @@
             </a>
           </li>
           <li class="active">
-            <a href="shopping-cart.html">Shopping cart</a>
+            <a href="#">Shopping cart</a>
           </li>
         </ul>
       </div>
@@ -176,13 +176,13 @@
                   <!-- Subtotal  -->
                   <div class="bill-card__memo-item subtotal">
                     <p class="font-body--md-400">Subtotal:</p>
-                    <span class="font-body--md-500">{{$data['subtotal']}} Tk.</span>
+                    <span class="font-body--md-500">{{$subtotal}} Tk.</span>
                   </div>
                   
                   <!-- total  -->
                   <div class="bill-card__memo-item total">
                     <p class="font-body--lg-400">Total:</p>
-                    <span class="font-body--xl-500">{{$data['subtotal']}} Tk.</span>
+                    <span class="font-body--xl-500">{{$subtotal}} Tk.</span>
                   </div>
                 </div>
                 <form action="{{ url('/product-checkout', $key) }}">

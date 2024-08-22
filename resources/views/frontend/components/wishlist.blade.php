@@ -9,7 +9,7 @@
               <div class="container">
                 <ul class="breedcrumb__content">
                   <li>
-                    <a href="index.html">
+                    <a href="#">
                       <svg
                         width="18"
                         height="19"
@@ -28,7 +28,7 @@
                       <span> > </span>
                     </a>
                   </li>
-                  <li class="active"><a href="wishlist.html">Wishlist</a></li>
+                  <li class="active"><a href="#">Wishlist</a></li>
                 </ul>
               </div>
             </div>
