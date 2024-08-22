@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                                 <div class="cards-md__info d-flex justify-content-between align-items-center">
-                                    <a href="product-details.html" class="cards-md__info-left">
+                                    <a href="{{ url('/product') }}" class="cards-md__info-left">
                                         <h6 class="font-body--md-400">{{ $item->name }}</h6>
                                         <div class="cards-md__info-price">
                                             @if ($item->discounted_price)

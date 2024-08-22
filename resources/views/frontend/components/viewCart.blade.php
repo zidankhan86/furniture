@@ -68,7 +68,7 @@
                     <!-- Product item  -->
                     <td class="cart-table-item align-middle">
                       <a
-                        href="product-details.html"
+                        href="{{ url('/product') }}"
                         class="cart-table__product-item"
                       >
                        
