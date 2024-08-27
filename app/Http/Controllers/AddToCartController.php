@@ -91,4 +91,23 @@ class AddToCartController extends Controller
                 notify()->warning('Product removed successfully');
               return redirect()->back();
             }
+
+            public function updateCartQuantity(Request $request, $id)
+              {
+                  $cart = session()->get('cart');
+
+                  if(isset($cart[$id])) {
+                      $cart[$id]['quantity'] = $request->quantity;
+                      $cart[$id]['subtotal'] = $cart[$id]['quantity'] * $cart[$id]['price'];
+                      
+                      session()->put('cart', $cart);
+
+                      notify()->success('Cart quantity updated successfully.');
+                  } else {
+                      notify()->error('Product not found in cart.');
+                  }
+
+                  return redirect()->back();
+              }
+
         }

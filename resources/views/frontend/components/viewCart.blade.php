@@ -79,21 +79,24 @@
                     <td class="cart-table-item order-date align-middle">
                         {{$data['price']}} Tk
                     </td>
-                    <!-- quantity -->
                     <td class="cart-table-item order-total align-middle">
                       <div class="counter-btn-wrapper">
-                        
-                        <input
-                          type="readonly"
-                          id="counter-btn-counter"
-                          class="counter-btn-counter"
-                          min="1"
-                          max="1000"
-                          placeholder="1" value="{{$data['quantity']}}" disabled
-                        />
-                       
+                        <form action="{{ route('cart.update.quantity', $key) }}" method="POST" style="display: flex; align-items: center;">
+                          @csrf
+                          <input
+                            type="number"
+                         
+                            name="quantity"
+                            min="1"
+                            max="1000"
+                            value="{{ $data['quantity'] }}"
+                          
+                          />
+                          <button type="submit" class="button button--md update">Update</button>
+                        </form>
                       </div>
                     </td>
+                    
                     <!-- Subtotal  -->
                     <td class="cart-table-item order-subtotal align-middle">
                       <div
