@@ -1,44 +1,72 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        @php
-        $title = App\Models\Title::latest()->first();
-        @endphp
-    <title>{{optional($title)->title}}</title>
-        @include('backend.fixed.style')
-    </head>
-    <body class="sb-nav-fixed">
+
+<head>
+    @include('backend.fixed.style')
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+       
+ <!-- Header -->
+ <livewire:header/>
 
 
-            <!-- Header -->
-            <livewire:header/>
+       
 
+<!-- Sidebar -->
+<livewire:sidebar/>
 
-        <div id="layoutSidenav">
-
-           <!-- Sidebar -->
-            <livewire:sidebar/>
-
-            <div id="layoutSidenav_content">
-
-                <main>
-
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
 
             @yield('content')
             @include('sweetalert::alert')
-                </main>
-
-            <!-- Footer -->
-            <livewire:footer/>
-
-
-
-            </div>
         </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+           <!-- Footer -->
+           <livewire:footer/>
 
-        <!-- Script -->
-        @include('backend.fixed.script')
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    </body>
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+   
+
+
+<!-- Script -->
+@include('backend.fixed.script')
+</body>
+
 </html>

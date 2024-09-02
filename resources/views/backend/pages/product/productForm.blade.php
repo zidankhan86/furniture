@@ -2,10 +2,12 @@
 
 @section('content')
 
-<div class="container mt-4">
+<div class="container-fluid">
     <div class="row">
         <!-- Product Form -->
-        <div class="col-md-12">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
             <h4 class="text-success text-center">Product</h4>
 
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
@@ -18,7 +20,7 @@
                 <div class="row mt-4">
                     <div class="mb-3 col-md-6">
                         <label for="exampleInputName1" class="form-label">Name</label>
-                        <input type="text" class="form-control" value="{{ old('name') }}" id="exampleInputName1" name="name" placeholder="Mango..">
+                        <input type="text" class="form-control" value="{{ old('name') }}" id="exampleInputName1" name="name" placeholder="Enter name..">
                         @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -27,7 +29,7 @@
                     <div class="mb-3 col-md-6">
                         <label for="exampleInputCategory" class="form-label">Select Category</label>
                         <select name="category_id"  class="form-control">
-                            <option value="">SELECT A CATEGORY</option>
+                            <option value="">---Select Category----</option>
                             @foreach ($categories as $item)
                             <option value="{{ $item->id }}">{{ $item->type }}</option>
                             @endforeach
@@ -49,7 +51,7 @@
                 <div class="row">
                    
 
-                    <div class="mb-3 col-md-6">
+                    <div class="mb-3 col-md-4">
                         <label class="form-label">Stock</label>
                         <input type="number" class="form-control" value="{{ old('stock') }}" id="exampleInputInhouseStock" name="stock" placeholder="Enter Stock.">
                         @error('stock')
@@ -57,20 +59,15 @@
                         @enderror
                     </div>
 
-                    <div class="mb-3 col-md-6">
+                    <div class="mb-3 col-md-4">
                         <label for="exampleInputPrice" class="form-label">Price</label>
                         <input type="number" class="form-control" id="exampleInputPrice" value="{{ old('price') }}" name="price" placeholder="Enter Price..">
                         @error('price')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                </div>
 
-                <div class="row">
-                  
-
-
-                    <div class="col-md-12 mb-3">
+                    <div class="mb-3 col-md-4">
                         <label for="exampleInputStatus" class="form-label">Status</label>
                         <select name="status" id="exampleInputStatus" class="form-control">
                             <option value="1">Active</option>
@@ -82,6 +79,8 @@
                     </div>
                 </div>
 
+              
+
 
                 <div class="mb-3">
                     <label class="form-label">Description</label>
@@ -90,21 +89,15 @@
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="mb-3 col-md-12">
-                    <label for="exampleInputDiscount" class="form-label">Discount</label>
-                    <input type="number" class="form-control" id="exampleInputDiscount" value="{{ old('discount') }}" name="discount" placeholder="25%..">
-                    @error('discount')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary">+ Add Product</button>
+              
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-dark">+ Add</button>
                 </div>
 
             </form>
         </div>
-
-       
+    </div>
+    </div>   
     </div>
 </div>
 
@@ -135,19 +128,6 @@
     }
 </style>
 
-<script>
-    $('.dropify').dropify({
-        messages: {
-            'default': 'Drag Product Image',
-            'replace': 'Drag and drop or click to replace',
-            'remove': 'Remove',
-            'error': 'Ooops, something wrong happended.'
-        }
-    });
 
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
-</script>
 
 @endsection

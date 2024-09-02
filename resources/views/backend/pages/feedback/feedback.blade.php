@@ -1,58 +1,60 @@
 @extends('backend.master')
 
 @section('content')
-
-<div class="container">
-<div class="container">
-
-<div class="container">
-
-
-
- <br><h4 class="text-success text-center">User Feedback</h4><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
 
 
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">serial</th>
-        <th scope="col"> Name</th>
-        <th scope="col"> Message</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-        @php
-            $serial =1;
-        @endphp
-
-        @foreach ($feedback as $item)
-      <tr>
+                            <br>
+                            <h4 class="text-info text-center">Feedback</h4><br>
 
 
-        <th scope="row">{{ $serial++}}</th>
-        <td>{{ $item->name}}</td>
-      
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">SL</th>
+                                        <th scope="col"> Name</th>
+                                        <th scope="col"> Message</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
+                                        $serial = 1;
+                                    @endphp
+
+                                    @foreach ($feedback as $item)
+                                        <tr>
 
 
-        <td>
-            <a href="{{route('contact.view' ,$item->id)}}"> <B>See More</B></a>
+                                            <th scope="row">{{ $serial++ }}</th>
+                                            <td>{{ $item->name }}</td>
 
 
-        </td>
-  
 
-      </tr>
-      @endforeach
+                                            <td>
+                                                <a href="{{ route('contact.view', $item->id) }}"> <B>Show</B></a>
 
-    </tbody>
-  </table>
 
-  </div>
-</div>
-</div>
+                                            </td>
 
+
+                                        </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
-
-

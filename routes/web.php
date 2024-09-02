@@ -92,7 +92,6 @@ Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 //Category
 Route::controller(CategoryController::class)->group(function(){
     Route::get('/category-form','categoryForm')->name('category.form');
-    Route::get('/website-title-form','websiteTitle')->name('website.form');
     Route::post('/category-store','categoryStore')->name('category.store');
     Route::get('/category-list','categoryList')->name('category.list');
     Route::get('/category-edit/{id}','categoryedit')->name('category.edit');
@@ -108,14 +107,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::post('/product-update/{id}','productupdate')->name('product.update');
     Route::get('/product-delete/{id}','productDelete')->name('product.delete');});
 
-//Logo
-Route::controller(CompanyLogoController::class)->group(function(){
-    Route::get('/logo-form','LogoForm')->name('logo.form');
-    Route::post('/logo-store','LogoStore')->name('logo.store');
-    Route::get('/logo-delete/{id}','LogoDelete')->name('logo.delete');
-    Route::get('/logo-list','LogoList')->name('logo.list');
-    Route::get('/logo-edit/{id}','Logo_edit')->name('logo.edit');
-    Route::post('/logo-update/{id}','logo_update')->name('logo.update');});
+
 
 //Order
 Route::controller(OrderController::class)->group(function(){
