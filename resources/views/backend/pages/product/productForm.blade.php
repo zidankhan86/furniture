@@ -8,7 +8,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-            <h4 class="text-success text-center">Product</h4>
+            <h4 class="text-success text-center">Furniture</h4>
 
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf

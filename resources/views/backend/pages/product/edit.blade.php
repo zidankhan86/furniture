@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body">
                         <br>
-                        <h4 class="text-success text-center">Edit Product</h4>
+                        <h4 class="text-success text-center">Edit</h4>
                         <form action="{{ route('product.update', $edit->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
 

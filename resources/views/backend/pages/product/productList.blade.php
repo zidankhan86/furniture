@@ -11,7 +11,7 @@
             <div class="card-title">
                 <a class="btn btn-warning float-end ml-2" href="{{ route('product.form') }}">+ Add
                     </a>
-                <h4 style="text-align: center"><b>Product</b></h4>
+                <h4 style="text-align: center"><b>Furnitures</b></h4>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped">
