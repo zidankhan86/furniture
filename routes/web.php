@@ -38,14 +38,14 @@ Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 //product
-Route::get('/product',[FrontendProductController::class,'product']);
+Route::get('/product',[FrontendProductController::class,'product'])->name('shop');
 Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('details');
 Route::get('/search',[SearchController::class,'search'])->name('user.search');
 
 Route::get('/about',[AboutUsController::class,'about'])->name('about');
 
 //ContactUs
-Route::get('/contact',[ContactController::class,'contact']);
+Route::get('/contact',[ContactController::class,'contact'])->name('contact');
 Route::post('/contact-form',[ContactController::class,'contactForm'])->name('contact.form.store');
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
 //profile

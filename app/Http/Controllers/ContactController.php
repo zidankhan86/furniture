@@ -35,7 +35,7 @@ class ContactController extends Controller
 
         ]);
         
-        notify()->success('Thank you for your feedback.');
+        Alert::toast()->success('Thank you for your feedback.');
         return back();
 
     }

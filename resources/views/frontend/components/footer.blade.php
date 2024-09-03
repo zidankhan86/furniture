@@ -1,97 +1,34 @@
 
-
- <!--Footer Section Start  -->
- <footer class="footer footer--one">
-    <div class="container">
-        <div class="footer__top">
-            <div class="row">
-                <!-- Brand information-->
-                <div class="col-lg-4">
-                    <div class="footer__brand-info">
-                        @php
-                        $logo = App\Models\CompanyLogo::latest()->first();
-                        @endphp
-                        <div class="footer__brand-info-logo">
-                            @if($logo)
-                            <a href="{{ route('home') }}"><img src="{{url('/public/uploads/', $logo->image)}}" alt=""></a>
-                            @else
-                                <a href="{{ route('home') }}">Inseart a logo</a>
-                             @endif
-                        </div>
-                       
-                        <div class="footer__brand-info-contact">
-                            <a href="#"><span>01770000000</span></a>
-                            or
-                            <a href="#"><span>iubat@gmail.com</span></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- My Account  -->
-                <div class="col-lg-2 col-md-3 col-6">
-                    <ul class="footer__navigation">
-                        <li class="footer__navigation-title">
-                            <h2 class="font-body--lg-500">My Account</h2>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="#"> My Account </a>
-                        </li>
-                        @auth
-                        <li class="footer__navigation-link">
-                            <a href="{{ route('profile') }}"> order History </a>
-                        </li> 
-                        @endauth
-                       
-                      
-                    </ul>
-                </div>
-                <!-- Helps  -->
-                <div class="col-lg-2 col-md-3 col-6">
-                    <ul class="footer__navigation">
-                        <li class="footer__navigation-title">
-                            <h2 class="font-body--lg-500">My Helps</h2>
-                        </li>
-                        <li class="footer__navigation-link">
-                            <a href="{{ url('contact') }}"> Contact </a>
-                        </li>
-                       
-                    </ul>
-                </div>
-                <!-- Proxy -->
-                <div class="col-lg-2 col-md-3 col-6">
-                    <ul class="footer__navigation">
-                        <li class="footer__navigation-title">
-                            <h2 class="font-body--lg-500">Proxy</h2>
-                        </li>
-                       
-                      
-                        <li class="footer__navigation-link">
-                            <a href="{{ url('/product') }}"> Product </a>
-                        </li>
-                       
-                    </ul>
-                </div>
-                <!-- Categories -->
-                <div class="col-lg-2 col-md-3 col-6">
-                    <ul class="footer__navigation">
-                        <li class="footer__navigation-title">
-                            <h2 class="font-body--lg-500">Website Name</h2>
-                        </li>
-                       <li class="footer__navigation">
-                        
-                       </li>
-                       <li class="footer__navigation-link">
-                        <a href="{{ url('/home') }}"> {{env('app_name')}} </a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p class="footer__copyright-text">
-                {{env('app_name')}} © <script>document.write(new Date().getFullYear());</script>. All Rights Reserved
-            </p>
-           
-        </div>
-    </div>
-</footer>
-<!--Footer Section end  -->
+         <!--================Footer Area =================-->
+         <footer class="footer_area p_120">
+        	<div class="container">
+        		<div class="row footer_inner">
+        			<div class="col-lg-5 col-sm-6">
+        				<aside class="f_widget ab_widget">
+        					<div class="f_title">
+        						<h3>About Me</h3>
+        					</div>
+        					<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills,</p>
+        					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>Copyright &copy; {{ config('app.name') }} {{ date('Y') }}</script> All rights reserved</p>
+        				</aside>
+        			</div>
+        			
+        			<div class="col-lg-2">
+        				<aside class="f_widget social_widget">
+        					<div class="f_title">
+        						<h3>Follow Me</h3>
+        					</div>
+        					<p>Let us be social</p>
+        					<ul class="list">
+        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+        						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+        					</ul>
+        				</aside>
+        			</div>
+        		</div>
+        	</div>
+        </footer>
+        <!--================End Footer Area =================-->

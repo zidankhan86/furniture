@@ -29,7 +29,7 @@ class AddToCartController extends Controller
                     ];
 
                   session()->put('cart',$myCart);
-                  notify()->success('Product added to the cart');
+                  Alert::toast()->success('Product added to the cart');
 
                   return redirect()->back();
             }
@@ -47,7 +47,7 @@ class AddToCartController extends Controller
                 ];
 
                 session()->put('cart',$cart);
-              notify()->success('New product added to the cart');
+                Alert::toast()->success('New product added to the cart');
                 return redirect()->back();
 
             }
@@ -58,7 +58,7 @@ class AddToCartController extends Controller
             $cart[$id]['subtotal']=$cart[$id]['quantity'] * $cart[$id]['price'];
             session()->put('cart',$cart);
 
-           notify()->success('Cart successfully updated.');
+            Alert::toast()->success('Cart successfully updated.');
             return redirect()->back();
           }
 
@@ -77,7 +77,7 @@ class AddToCartController extends Controller
             public function clearCart()
             {
                 session()->forget('cart');
-                notify()->warning('Cart Clear Successfully.');
+                Alert::toast()->success('Cart Clear Successfully.');
                 return redirect()->back();
             }
 
@@ -88,7 +88,7 @@ class AddToCartController extends Controller
               unset($cart[$id]);
         //      dd($cart);
                 session()->put('cart',$cart);
-                notify()->warning('Product removed successfully');
+                Alert::toast()->success('Product removed successfully');
               return redirect()->back();
             }
 
@@ -102,9 +102,9 @@ class AddToCartController extends Controller
                       
                       session()->put('cart', $cart);
 
-                      notify()->success('Cart quantity updated successfully.');
+                      Alert::toast()->success('Cart quantity updated successfully.');
                   } else {
-                      notify()->error('Product not found in cart.');
+                    Alert::toast()->success('Product not found in cart.');
                   }
 
                   return redirect()->back();
