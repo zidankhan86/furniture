@@ -30,14 +30,14 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="fname1">Full Name</label>
-                  <input type="text" class="form-control" id="fname1" name="full_name" placeholder="Your name">
+                  <input type="text" class="form-control" id="fname1" name="full_name" placeholder="Enter Your name">
                   @error('full_name')
                     <small class="text-danger">{{$message}}</small>
                   @enderror
                 </div>
                 <div class="form-group col-md-6">
                   <label for="lname2">Phone</label>
-                  <input type="tel" class="form-control" id="lname2" name="phone" placeholder="01700000000">
+                  <input type="tel" class="form-control" id="lname2" name="phone" placeholder="Enter your phone number">
                   @error('phone')
                     <small class="text-danger">{{$message}}</small>
                   @enderror
@@ -45,14 +45,14 @@
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="iubat@gmail.com">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
                 @error('email')
                   <small class="text-danger">{{$message}}</small>
                 @enderror
               </div>
               <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="Your Address">
+                <input type="text" class="form-control" id="address" name="address" placeholder="Enter Your Address">
                 @error('address')
                   <small class="text-danger">{{$message}}</small>
                 @enderror

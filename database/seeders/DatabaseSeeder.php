@@ -28,8 +28,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
-            TitleSeeder::class,
-            LogoSeeder::class
+  
         ]);
     }
 }

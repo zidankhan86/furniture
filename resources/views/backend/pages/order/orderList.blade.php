@@ -16,7 +16,7 @@
                                     <tr>
                                         <th scope="col">SL</th>
                                         <th scope="col">Product</th>
-                                        <th scope="col">Price</th>
+                                        <th scope="col">Total</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Address</th>
                                         <th scope="col">Phone</th>
@@ -32,7 +32,9 @@
                                     @foreach ($orders as $item)
                                         <tr>
                                             <th scope="row">{{ $id++ }}</th>
-                                            <td>{{ $item->product->name }}</td>
+                                           
+                                            <td>{{ $item->name }}</td>
+                                          
                                             <td>{{ $item->price }} Tk.</td>
                                             <td>{{ $item->full_name }}</td>
                                             <td>{{ $item->address }}</td>

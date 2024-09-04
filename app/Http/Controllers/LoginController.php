@@ -30,7 +30,7 @@ class LoginController extends Controller
             if (auth()->user()->role == 'customer') {
                 return redirect()->route('home');
             } elseif (auth()->user()->role == 'admin') {
-                Alert::toast()->error('error','Login Success');
+                Alert::toast()->success('success','Login Success');
                 return redirect()->route('dashboard');
             }
         } else {

@@ -15,8 +15,8 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ["type" => "Food", "status" => true],
-            ["type" => "Banana", "status" => true],
+            ["type" => "sofa", "status" => true],
+            ["type" => "sofatwo", "status" => true],
             ["type" => "Shoes", "status" => true],
             ["type" => "Dresses", "status" => true],
             ["type" => "Handbags", "status" => true],
@@ -27,16 +27,16 @@ class ProductSeeder extends Seeder
         ];
 
         $images = [
-            '2024071604265226.webp',
-            '2024071604515551.webp',
-            '2024071604505450.webp',
-            '2024071604385238.webp',
-            '2024071604265226.webp',
-            '2024071604115211.webp',
-            '2024071604115211.webp',
-            '2024071604515551.webp',
-            '2024071604515551.webp',
-            '2024071604505450.webp',
+            '2024090403035803.jpg',
+            '2024090403325732.jpg',
+            '2024090403515751.jpg',
+            '2024090403325732.jpg',
+            '2024090403515751.jpg',
+            '2024090403325732.jpg',
+            '2024090403325732.jpg',
+            '2024090403515751.jpg',
+            '2024090403035803.jpg',
+            '2024090403035803.jpg',
             
         ];
 
