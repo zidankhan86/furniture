@@ -21,6 +21,7 @@
                                         <th scope="col">Address</th>
                                         <th scope="col">Phone</th>
                                         <th scope="col">Email</th>
+                                        <th>Action</th>
 
                                     </tr>
                                 </thead>
@@ -40,6 +41,11 @@
                                             <td>{{ $item->address }}</td>
                                             <td>{{ $item->phone }}</td>
                                             <td>{{ $item->email }}</td>
+                                            <td>
+                                                <a href="" class="btn btn-success">Confirm Order</a>
+                                                <a href="" class="btn btn-danger">Cancel Order</a>
+                                            </td>
+                                            
 
 
                                         </tr>

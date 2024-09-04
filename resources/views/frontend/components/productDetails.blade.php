@@ -32,8 +32,8 @@
                         
                         <ul class="list">
                             <li><span>Stock</span>: {{ $details->stock }}</li>
-                            <li><span>Client</span>:  {{ $details->price }}</li>
-                            <li><span>Website</span>:  colorlib.com</li>
+                            <li><span>Price</span>:  {{ $details->price }} Tk.</li>
+                            {{-- <li><span>Website</span>:  colorlib.com</li> --}}
                             @if ($details->stock != 0)
                             <li><a href="{{route('add.to.cart',$details->id)}}" class="genric-btn primary circle">Add to cart</a></li>
                             @else

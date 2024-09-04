@@ -19,7 +19,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Type</label>
-                                    <input type="text" value="{{ old('type') }}" class="form-control" id="exampleInputName2" name="type" placeholder="Fruit">
+                                    <input type="text" value="{{ old('type') }}" class="form-control" id="exampleInputName2" name="type" placeholder="Enter type">
                                     @error('type')
                                         <strong class="text-danger">{{ $message }}</strong>
                                     @enderror

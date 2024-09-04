@@ -121,7 +121,6 @@ Route::controller(ReportController::class)->group(function(){
     Route::get('/report/search','reportSearch')->name('order.report.search');
 });
 
-Route::get('/contact-list',[ContactController::class,'contactlist'])->name('contact.list');
-Route::get('/contact-view/{id}',[ContactController::class,'contactview'])->name('contact.view');
+
 
 });

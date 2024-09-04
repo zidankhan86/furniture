@@ -64,7 +64,7 @@ class ProductController extends Controller
             $product->update(['discounted_price' => $discountedPrice]);
         }
 
-            Alert::success('Product Added Successfully!');
+            Alert::success('Furniture Added Successfully!');
           return back();
 
         }
@@ -123,7 +123,7 @@ class ProductController extends Controller
              'status'               =>$request->status,
             ]);
 
-            Alert::success('product Updated successfully!!');
+            Alert::success('Furniture Updated successfully!!');
             return redirect()->back();
 
         }
@@ -134,7 +134,7 @@ class ProductController extends Controller
 
             $delete->delete();
 
-            Alert::success('Product Deleted Successfully!!');
+            Alert::success('Furniture Deleted Successfully!!');
 
             return redirect()->back();
         }
