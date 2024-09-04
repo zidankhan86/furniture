@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\Product;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Library\SslCommerz\SslCommerzNotification;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -42,7 +43,7 @@ class SslCommerzPaymentController extends Controller
                     $product->stock -= $cartItem['quantity'];
                     $product->save();
                 } else {
-                    notify()->error("Product {$product->name} is out of stock");
+                    Alert::toast()->error("Product {$product->name} is out of stock");
                     return redirect()->back();
                 }
             }
@@ -112,11 +113,11 @@ class SslCommerzPaymentController extends Controller
         $sslc = new SslCommerzNotification();
         # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
         $payment_options = $sslc->makePayment($post_data, 'hosted');
-        notify()->success('Order successful!.');
+        Alert::toast()->success('Order successful!.');
         if (!is_array($payment_options)) {
             print_r($payment_options);
             $payment_options = array();
-            notify()->success('Order successful!.');
+            Alert::toast()->success('Order successful!.');
             return redirect()->route('home');
         } 
 
@@ -124,7 +125,7 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        notify()->success('Order successful!.');
+        Alert::toast()->success('Order successful!.');
         return redirect()->route('home');
 
         $tran_id = $request->input('tran_id');
