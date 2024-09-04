@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -29,11 +30,11 @@ class LoginController extends Controller
             if (auth()->user()->role == 'customer') {
                 return redirect()->route('home');
             } elseif (auth()->user()->role == 'admin') {
-                notify()->error('error','Login Success');
+                Alert::toast()->error('error','Login Success');
                 return redirect()->route('dashboard');
             }
         } else {
-            notify()->error('error','Invalid credentials');
+            Alert::toast()->error('error','Invalid credentials');
             return redirect()->back();
         }
     }
@@ -89,7 +90,7 @@ public function registrationStore(Request $request){
         "role"=>'customer',
 
     ]);
-    notify()->success('Registration successful!.');
+    Alert::toast()->success('Registration successful!.');
     return redirect('/login-frontend')->withSuccess('Registration Success');
 
 }

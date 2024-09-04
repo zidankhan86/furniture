@@ -36,10 +36,10 @@
 
     
 
-    @notifyCss
+   
     @yield('loginbackend')
-    @include('notify::components.notify')
-    @notifyJs
+    @include('sweetalert::alert')
+   
 
 
     
