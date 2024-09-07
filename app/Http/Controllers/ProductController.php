@@ -17,15 +17,13 @@ class ProductController extends Controller
     }
 
     public function productStore(Request $request){
-         //dd($request->all());
 
         $validator = Validator::make($request->all(), [
             'name'                  => 'required|string',
             'category_id'           => 'required',
-            'image'                 => 'nullable|max:500',
+            'image'                 => 'nullable|max:2000',
             'stock'                 => 'required|integer|min:0',
             'price'                 => 'required|numeric|min:0',
-            'discount'              => 'nullable|numeric|min:0|max:100',
             'product_information'   => 'required',
             'status'                => 'required',
         ]);
@@ -47,23 +45,11 @@ class ProductController extends Controller
              "image"                =>$images,
              "stock"                =>$request->stock,
              "price"                =>$request->price,
-             "discount"             =>$request->discount,
              'product_information'  =>$request->product_information,
              'status'               =>$request->status,
           ]);
 
-          if ($product) {
-            // Assuming $product->discount is the discount percentage (e.g., 70%)
-            $discountPercentage = $product->discount / 100;
-            $originalPrice = $product->price;
-
-            // Calculate the discounted price
-            $discountedPrice = $originalPrice - ($originalPrice * $discountPercentage);
-
-            // Update the product's discounted price
-            $product->update(['discounted_price' => $discountedPrice]);
-        }
-
+        
             Alert::success('Furniture Added Successfully!');
           return back();
 
