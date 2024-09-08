@@ -21,9 +21,7 @@ class ProductController extends Controller
 
         $total_products = Product::count();
 
-        $products_has_discount = Product::whereNotNull('discount')->latest()->limit(4)->get();
-
-        return view('frontend.pages.product.shop',compact('products','total_products','products_has_discount'));
+        return view('frontend.pages.product.shop',compact('products','total_products'));
     }
 
     public function productDetails($id){
