@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="{{asset ('frontend/img/favicon.png') }}" type="image/png">
-        <title>Woodrox Furniture</title>
+        <title>Furniture</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{asset ('frontend/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{asset ('frontend/vendors/linericon/style.css') }}">

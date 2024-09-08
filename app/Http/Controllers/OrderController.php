@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class OrderController extends Controller
 {
@@ -43,10 +44,34 @@ class OrderController extends Controller
        $from=$request->from_date;
        $to=$request->to_date;
 
-//       $status=$request->status;
-
         $orders=Order::whereBetween('created_at', [$from, $to])->get();
         return view('backend.pages.report.report',compact('orders'));
 
+    }
+
+    public function confirm($id)
+    {
+        $status = Order::findOrFail($id);
+
+        $status->update([
+
+            'status' => 'confirm',
+        ]);
+
+        Alert::success('Order Confirmed successfully!!!');
+        return redirect()->back();
+    }
+
+    public function cancel($id)
+    {
+        $status = Order::findOrFail($id);
+
+        $status->update([
+
+            'status' => 'Cancelled',
+        ]);
+
+        Alert::warning('Order Cancelled successfully.');
+        return redirect()->back();
     }
 }

@@ -30,19 +30,17 @@ use App\Http\Controllers\frontend\ProductController as FrontendProductController
 
 
 
-
+//Landing
+Route::get('/product',[FrontendProductController::class,'product'])->name('shop');
+Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('details');
+Route::get('/about',[AboutUsController::class,'about'])->name('about');
 //Payment
 Route::post('/pay/{id}', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
-//product
-Route::get('/product',[FrontendProductController::class,'product'])->name('shop');
-Route::get('/product-details/{id}',[FrontendProductController::class,'productDetails'])->name('details');
-Route::get('/search',[SearchController::class,'search'])->name('user.search');
 
-Route::get('/about',[AboutUsController::class,'about'])->name('about');
 
 //ContactUs
 Route::get('/contact',[ContactController::class,'contact'])->name('contact');
@@ -50,8 +48,6 @@ Route::post('/contact-form',[ContactController::class,'contactForm'])->name('con
 Route::get('/login-frontend', [LoginController::class, 'showLoginFormFrontend'])->name('login.frontend');
 //profile
 Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
-Route::get('/admin-profile',[ProfileController::class,'adminProfile']);
-
 //Auth
 Route::controller(LoginController::class)->group(function(){
     Route::get('/login','showLoginForm')->name('login');
@@ -61,7 +57,7 @@ Route::controller(LoginController::class)->group(function(){
     Route::post('/registration', 'registrationStore')->name('registration.submit');
 });
 
-//Middleware for check valid user
+
 Route::group(['middleware' => 'customerAuth'], function () {
     //AddToCard
 Route::controller(AddToCartController::class)->group(function(){
@@ -70,16 +66,6 @@ Route::controller(AddToCartController::class)->group(function(){
     Route::get('/clear-cart','clearCart')->name('cart.clear');
     Route::post('/cart-item/update-quantity/{id}','updateCartQuantity')->name('cart.update.quantity');
     Route::get('/cart-item/delete/{id}','cartItemDelete')->name('cart.item.delete');});
-    
-    //Wishlist
- Route::controller(WishlistController::class)->group(function(){
-    Route::get('/wishlist',  'index')->name('wishlist.index');
-    Route::post('/wishlist/add/{id}', 'addToWishlist')->name('add.to.wishlist');
-    Route::get('/wishlist/remove/{wishlist}','removeFromWishlist')->name('remove.Wishlist');
-    Route::post('/cart/add-from-wishlist/{id}','addToCartFromWishlist')->name('cart.add-from-wishlist');});
-
-
-//Cart Product Order
 Route::get('/product-checkout/{id}',[FrontendProductController::class,'productCheckout'])->name('product.checkout');
 
 });
@@ -89,38 +75,32 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
 
 Route::get('/',[HomeController::class,'dashboard'])->name('dashboard');
 
-//Category
-Route::controller(CategoryController::class)->group(function(){
-    Route::get('/category-form','categoryForm')->name('category.form');
-    Route::post('/category-store','categoryStore')->name('category.store');
-    Route::get('/category-list','categoryList')->name('category.list');
-    Route::get('/category-edit/{id}','categoryedit')->name('category.edit');
-    Route::post('/category-update/{id}','categorupdate')->name('category.update');
-    Route::get('/category-delete/{id}','categordelete')->name('category.delete');});
-
-//Product
-Route::controller(ProductController::class)->group(function(){
-    Route::get('/product-form','productForm')->name('product.form');
-    Route::post('/product-store','productStore')->name('product.store');
-    Route::get('/product-list','productList')->name('product.list');
-    Route::get('/product-edit/{id}','productEdit')->name('product.edit');
-    Route::post('/product-update/{id}','productupdate')->name('product.update');
-    Route::get('/product-delete/{id}','productDelete')->name('product.delete');});
-
-
-
+// Category Routes
+Route::get('/category-form', [CategoryController::class, 'categoryForm'])->name('category.form');
+Route::post('/category-store', [CategoryController::class, 'categoryStore'])->name('category.store');
+Route::get('/category-list', [CategoryController::class, 'categoryList'])->name('category.list');
+Route::get('/category-edit/{id}', [CategoryController::class, 'categoryEdit'])->name('category.edit');
+Route::post('/category-update/{id}', [CategoryController::class, 'categorupdate'])->name('category.update');
+Route::get('/category-delete/{id}', [CategoryController::class, 'categordelete'])->name('category.delete');
+// Product Routes
+Route::get('/product-form', [ProductController::class, 'productForm'])->name('product.form');
+Route::post('/product-store', [ProductController::class, 'productStore'])->name('product.store');
+Route::get('/product-list', [ProductController::class, 'productList'])->name('product.list');
+Route::get('/product-edit/{id}', [ProductController::class, 'productEdit'])->name('product.edit');
+Route::post('/product-update/{id}', [ProductController::class, 'productUpdate'])->name('product.update');
+Route::get('/product-delete/{id}', [ProductController::class, 'productDelete'])->name('product.delete');
 //Order
 Route::controller(OrderController::class)->group(function(){
     Route::get('/order-list','orderList')->name('order.list');
-    
-});
+});   
+Route::get('/order-confirm/{id}', [OrderController::class, 'confirm'])->name('confirm');
+Route::get('/order-cancel/{id}', [OrderController::class, 'cancel'])->name('reject');
 
 Route::controller(ReportController::class)->group(function(){
 
     Route::get('/report','report')->name('report');
     Route::get('/report/search','reportSearch')->name('order.report.search');
-});
+});});
 
 
 
-});
