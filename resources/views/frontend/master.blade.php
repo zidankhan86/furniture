@@ -26,7 +26,7 @@
     <body>
         
        
-		@include('frontend.components.navLayer')
+		@include('frontend.components.header')
 
         
         
