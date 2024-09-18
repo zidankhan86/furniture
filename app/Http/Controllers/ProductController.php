@@ -94,9 +94,7 @@ class ProductController extends Controller
             $images=date('Ymdhsis').'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('uploads', $images, 'public');
         }
-            //dd($imageName);
-            //dd($request->all());
-
+        
             $update=Product::find($id);
 
             $update->update([
