@@ -42,8 +42,8 @@
                                             <td>{{ $item->phone }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>
-                                                <a href="{{ route('confirm', $item->id) }}" class="btn btn-success">Confirm Order</a>
-                                                <a href="{{ route('reject',$item->id) }}" class="btn btn-danger">Cancel Order</a>
+                                                <a href="{{ route('confirm', $item->id) }}" class="btn btn-success">Confirm</a>
+                                                <a href="{{ route('reject',$item->id) }}" class="btn btn-danger">Cancel</a>
                                             </td>
                                             
 

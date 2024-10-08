@@ -7594,9 +7594,9 @@ sub {
     display: none; }
   .nav-header .logo-compact {
     display: none; }
-  @media only screen and (min-width: 1200px) and (max-width: 1350px) {
+  @media only screen and (min-width: 1500px) and (max-width: 1400px) {
     .nav-header {
-      width: 14.375rem; } }
+      width: 19.375rem; } }
   .nav-header .brand-logo {
     z-index: 999; }
     .nav-header .brand-logo a {

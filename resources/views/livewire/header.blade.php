@@ -4,16 +4,16 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <div class="brand-logo">
+            <div class="">
                 <a href="{{ route('dashboard') }}">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="{{asset ('./images/logo-compact.png') }}" alt=""></span>
-                    <span class="brand-title" style="color: black">
-                        <b><i> LuxeHome</i></b>
-                    </span>
+                    <b class=""><img src="" alt=""></b>
+                    <span class=""><img src="" alt=""></span>
+                    <img src="{{ url('/frontend/logo.jpg') }}" alt="" style="width: 100px; height: 80px; margin-left: 50px;"> <!-- Adjust margin as needed -->
                 </a>
             </div>
         </div>
+        
+        
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -31,8 +31,6 @@
                 </div>
                 <div class="header-left">
                     <div class="input-group icons">
-                        
-                       
                        
                     </div>
                 </div>
