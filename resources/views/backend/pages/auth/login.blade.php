@@ -73,7 +73,7 @@
                             <button type="submit" class="btn btn-login btn-block">Login</button>
                         </div>
                         <div class="form-group text-center">
-                            <a href="#" class="text-muted">Forgot password?</a>
+                            
                         </div>
                     </form>
                 </div>

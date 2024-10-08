@@ -42,8 +42,15 @@
                                             <td>{{ $item->phone }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>
+                                                @if($item->status === 'confirm')
+                                                <span class="text-success">Confirmed</span>
+                                            @elseif($item->status === 'Cancelled')
+                                                <span class="text-danger">Cancelled</span>
+                                            @else
                                                 <a href="{{ route('confirm', $item->id) }}" class="btn btn-success">Confirm</a>
-                                                <a href="{{ route('reject',$item->id) }}" class="btn btn-danger">Cancel</a>
+                                                <a href="{{ route('reject', $item->id) }}" class="btn btn-danger">Cancel</a>
+                                            @endif
+
                                             </td>
                                             
 
